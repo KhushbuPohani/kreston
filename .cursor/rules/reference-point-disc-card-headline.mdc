@@ -1,0 +1,70 @@
+---
+description: Discovery feature card headline "reference point" — italic h4 in .disc-card-head
+globs: index.html
+alwaysApply: false
+---
+
+# Reference Point — Feature Card Headline (`h4` in `.disc-card-head`)
+
+When the user says **"reference point"** for a discovery/feature card title (e.g. "Social Proof Strip"), match plain `h4` inside `header.disc-card-head` in `.disc-card`.
+
+## Structure
+
+```html
+<article class="disc-card">
+  <header class="disc-card-head">
+    <h4>Social Proof Strip</h4>
+    <span class="rule" aria-hidden="true"></span>
+    <p class="friction-label">User Friction</p>
+    <p class="friction">Users leave to find third-party social proof — product details feel biased.</p>
+  </header>
+  <div class="disc-card-stage">…</div>
+  <footer class="disc-card-foot">…</footer>
+</article>
+```
+
+Use a plain `h4` — no `.title`, `.display`, or extra classes.
+
+## Visual spec
+
+| Property | Value |
+|----------|-------|
+| Element | `h4` (no class) inside `.disc-card-head` |
+| Font | `var(--serif)` (Instrument Serif) |
+| Size | `24px` |
+| Weight | `400` |
+| Style | **italic** |
+| Color | `var(--ink-deep)` |
+| Line-height | `1.15` |
+| Margin | `0` |
+
+## Full card head stack
+
+1. **`h4`** — italic serif feature name ← this reference
+2. `.rule` — bronze hairline divider (`rgba(162, 130, 90, 0.35)`)
+3. `.friction-label` — uppercase sans label (`11px`, weight 700, `var(--label)`)
+4. `.friction` — friction body (`13px`, weight 500, `var(--ink-deep)`)
+
+## Card shell context
+
+| Layer | Class | Notes |
+|-------|-------|-------|
+| Card | `.disc-card` | `--bg-card` fill, `--bronze` border, `16px` radius |
+| Head | `.disc-card-head` | `--bg-soft` background, `20px 16px 14px` padding |
+| Stage | `.disc-card-stage` | `#ebe4d8` mockup area |
+| Foot | `.disc-card-foot` | `.sol-label` + solution list |
+
+## vs other headlines
+
+| Class / element | Use |
+|-----------------|-----|
+| `h4` in `.disc-card-head` | Feature card title — italic serif, `24px` |
+| `h3` in `.gap-card` | Gap punchline — italic, `--h3`, `var(--ink)` |
+| `h3.title` in `.overview-sub-head` | Subsection head — regular (not italic), `--title-sm` |
+| `h4` in `.ai-touchpoint-head` | AI touchpoint card — same italic serif, `24px` |
+
+## Do not
+
+- Add `.title` or `.display` to feature card headlines.
+- Use sans-serif or remove italic.
+- Use `<h3>` — keep `h4` for card-level hierarchy inside `.disc-card`.

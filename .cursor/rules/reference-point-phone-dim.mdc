@@ -1,0 +1,60 @@
+---
+description: Phone sheet dim/scrim "reference point" — .hybrid-chat-demo-dim overlay
+globs: index.html
+alwaysApply: false
+---
+
+# Reference Point — Phone Sheet Dim (`.hybrid-chat-demo-dim`)
+
+When the user says **"reference point"** or **"copy this design"** for a phone modal dim/scrim (dark overlay behind a bottom sheet), match `.hybrid-chat-demo-dim` in `#ai-layer` → `.hybrid-chat-demo-phone`.
+
+## Structure
+
+```html
+<div class="hybrid-chat-demo-phone">
+  <!-- nav, hero, product UI behind -->
+  <div class="hybrid-chat-demo-dim" aria-hidden="true"></div>
+  <div class="hybrid-chat-demo-sheet">
+    <!-- bottom sheet content -->
+  </div>
+</div>
+```
+
+Dim sits **under** the sheet (`z-index: 2`), sheet at `z-index: 3`. Both are `position: absolute` inside the phone.
+
+## Visual spec
+
+| Property | Value |
+|----------|-------|
+| Element | `.hybrid-chat-demo-dim` |
+| Position | `absolute; inset: 0` |
+| Background | **`rgba(26, 21, 15, 0.32)`** — warm ink, 32% opacity |
+| Z-index | **2** (sheet above at 3+) |
+| Interaction | Decorative: `aria-hidden="true"` (non-button). Clickable scrims use `<button>` with same fill. |
+
+## CSS
+
+```css
+.hybrid-chat-demo-dim {
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 21, 15, 0.32);
+  z-index: 2;
+}
+```
+
+## Apply to other phone overlays
+
+Use the same fill on:
+
+- `.var-d .cert-sheet-scrim`
+- `.var-d .cert-chat-scrim`
+- `.to-feature .to-tradeoff-scrim`
+
+(Those may also animate `opacity: 0 → 1` when open — keep transitions; only match the **background** color.)
+
+## Do not
+
+- Use cool/neutral black (`rgba(0,0,0,…)`) — stay warm `26, 21, 15`.
+- Drop opacity below ~0.28 or above ~0.4 — product hero must stay readable but clearly recessed.
+- Place dim above the sheet — sheet must paint on top.

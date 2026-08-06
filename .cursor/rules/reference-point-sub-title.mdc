@@ -1,0 +1,69 @@
+---
+description: Subsection title "reference point" — h3.title in .overview-sub-head
+globs: index.html
+alwaysApply: false
+---
+
+# Reference Point — Subsection Title (`h3.title`)
+
+When the user says **"reference point"** for a subsection headline (e.g. "AI + Human, One Chat", "Where the chatbot appears — and why"), match `h3.title` inside `.overview-sub-head.stack-16` or `header.hybrid-chat-head` in `#overview`, `#discovery`, or `#ai-layer`.
+
+## Structure
+
+```html
+<!-- Pattern A — overview sub-head -->
+<div class="overview-sub-head stack-16">
+  <p class="eyebrow soft">Chatbot placement</p>
+  <h3 class="title">Where the chatbot appears — and why</h3>
+</div>
+
+<!-- Pattern B — hybrid chat head (equivalent treatment) -->
+<header class="hybrid-chat-head">
+  <p class="eyebrow soft">Chatbot experience</p>
+  <h3 class="title">AI + Human, One Chat</h3>
+</header>
+```
+
+Pair with `p.eyebrow.soft` above — see `reference-point-eyebrow-soft.mdc`. Full block pattern in `reference-point-sub-head.mdc`.
+
+## Visual spec
+
+| Property | Value |
+|----------|-------|
+| Element | `h3.title` inside `.overview-sub-head` or `.hybrid-chat-head` |
+| Font | `var(--serif)` → Instrument Serif |
+| Size | `var(--title-sm)` → **clamp(1.6rem, 2.6vw, 2.25rem)** |
+| Weight | **400** |
+| Style | **Regular** (not italic); use `<em>` for phrase emphasis only |
+| Color | `var(--ink-deep)` → **#1a1814** |
+| Line-height | **1.1** |
+| Max-width | **40rem** |
+| Margin | **0** |
+
+Scoped selectors (identical treatment):
+
+```css
+.overview-section .overview-sub-head h3.title,
+#discovery .overview-sub-head h3.title,
+#ai-layer .overview-sub-head h3.title,
+.hybrid-chat-head h3.title,
+#guardrails > .stack-32 > h3.title
+```
+
+Parent wrappers use `gap: 0.75rem` in `#ai-layer` / `#discovery` / `.hybrid-chat-head` (1rem in `#overview`). Full hybrid chat block: `reference-point-hybrid-chat-head.mdc`. Guardrails subsection heads (“Design Guardrails”, “System Guardrails…”) share the same `h3.title` treatment.
+
+## vs other headlines
+
+| Class / element | Use |
+|-----------------|-----|
+| **`h3.title` in `.overview-sub-head` or `.hybrid-chat-head`** | **Subsection head — regular serif, `--title-sm`** |
+| `h3` in `.gap-card` | Card punchline — fully italic, `--h3`, `var(--ink)` |
+| `.display` | Main section heads — largest, `--display` |
+| `.col-title` | About column titles — italic, `--h3` |
+
+## Do not
+
+- Use `.display` or plain `h2` for subsection titles.
+- Make the full line italic — only wrap emphasis phrases in `<em>`.
+- Use `h3.title` without `.overview-sub-head` or `.hybrid-chat-head` wrapper — loses subsection context.
+- Confuse with `.ai-touchpoint-head h4` — touchpoint card heads are 24px italic.

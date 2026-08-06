@@ -1,0 +1,45 @@
+---
+description: Subsection header "reference point" — grey eyebrow.soft + h3.title
+globs: index.html
+alwaysApply: false
+---
+
+# Reference Point — Subsection Head (`.overview-sub-head`)
+
+When the user says **"reference point"** for a subsection label/head (e.g. "About the project", "Gaps that are still uncovered"), match `.overview-sub-head` in `#overview`.
+
+## Structure
+
+```html
+<div class="overview-sub-head stack-16">
+  <p class="eyebrow soft">Section label</p>
+  <h3 class="title">Headline with <em>optional emphasis</em></h3>
+</div>
+```
+
+Place inside a block wrapper (`.about-block`, `.gaps-block`, etc.) above its content grid.
+
+## Visual spec
+
+| Layer | Class | Treatment |
+|-------|-------|-----------|
+| Wrapper | `.overview-sub-head.stack-16` | column flex, `gap: 1rem` |
+| Label | `.eyebrow.soft` | `var(--label-size)` (0.875rem), weight 500, `0.2em` tracking, uppercase, `var(--label-soft)` (#9ca3af) |
+| Headline | `h3.title` | `var(--serif)`, `var(--title-sm)`, weight 400, `var(--ink-deep)`, `max-width: 40rem` |
+
+See also **Subsection Title** reference in `reference-point-sub-title.mdc` for `h3.title` alone.
+| Emphasis | `.title em` | italic serif |
+
+## vs other eyebrows
+
+| Context | Class | Color |
+|---------|-------|-------|
+| Main section | `.eyebrow` | brown `var(--label)` |
+| Subsection (this reference) | `.eyebrow.soft` | grey `var(--label-soft)` |
+| Role card | `.role-card .eyebrow` | `#6b7280`, 0.75rem |
+
+## Do not
+
+- Use `.display` for subsection headlines — reserve for main section heads.
+- Use `.role-card` for this pattern — card is a separate reference point.
+- Apply brown `.eyebrow` on subsections — always `.eyebrow.soft`.

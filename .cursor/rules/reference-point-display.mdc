@@ -1,0 +1,93 @@
+---
+description: Main section display headline "reference point" — h2.display (base, not italic)
+globs: index.html
+alwaysApply: false
+---
+
+# Reference Point — Main Section Display (`h2.display`)
+
+When the user says **"reference point"** for a main section headline (e.g. "Choosing between Chatbot VS Inline AI", "Reimagining Discovery…"), match base `h2.display` — **not** the italic comparison variant.
+
+## Structure
+
+```html
+<header class="ai-compare-head">
+  <p class="eyebrow">The AI trust layer</p>
+  <h2 class="display">Choosing between Chatbot VS Inline AI</h2>
+  <p class="lead">Supporting sentence under the display head.</p>
+</header>
+```
+
+Also used as:
+
+```html
+<div class="stack-24">
+  <p class="eyebrow">Section label</p>
+  <h2 class="display">Main section headline</h2>
+</div>
+```
+
+Pair with brown `.eyebrow` above. Optional `.lead` below.
+
+## Visual spec
+
+| Property | Value |
+|----------|-------|
+| Element | `h2.display` (base class) |
+| Font | `var(--serif)` → Instrument Serif |
+| Size | `var(--display)` → **clamp(2.25rem, 4.4vw, 3.5rem)** |
+| Weight | **400** |
+| Style | **Regular** (not italic); use `<em>` for phrase emphasis only |
+| Color | `var(--ink)` → **#1a1a1a** |
+| Line-height | **1.1** |
+| Letter-spacing | **-0.01em** |
+| Margin | 0 (global reset) |
+
+## Base CSS
+
+```css
+.display {
+  font-family: var(--serif);
+  font-size: var(--display);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+```
+
+Canonical live example: `#ai-layer` → `.ai-compare-head` → `h2.display` (“Choosing between Chatbot VS Inline AI”).
+
+Other matches (same treatment via scoped selectors):
+
+```css
+#discovery > .stack-24 > h2.display,
+#post-purchase > .stack-24 > h2.display,
+#guardrails > .stack-24 > h2.display,
+.ai-compare-head h2.display
+```
+
+Also: Overview section head.
+
+## Wrapper (AI compare)
+
+| Property | Value |
+|----------|-------|
+| Wrapper | `.ai-compare-head` |
+| Layout | column flex, `gap: 24px` |
+
+## vs other headlines
+
+| Class / element | Use |
+|-----------------|-----|
+| **`h2.display` (base)** | **Main section heads — regular serif, `--display`, `var(--ink)`** |
+| `h2.display` in `.comparison-head` | Comparison pin — **italic**, `--ink-deep`, line-height 1.15 — see `reference-point-comparison-display.mdc` |
+| `h3.title` in `.overview-sub-head` / `.hybrid-chat-head` | Subsection heads — smaller `--title-sm` |
+| `.title` (h2) | Mid-level heads (e.g. What's next) — `--title`, not `--display` |
+
+## Do not
+
+- Apply italic to the full line — that is the **comparison** variant only.
+- Use `var(--ink-deep)` for base section displays — base uses `var(--ink)`.
+- Shrink to `--title` or `--title-sm` — collapses hierarchy against subsection titles.
+- Confuse with `.ai-compare-card-title` — card titles are a separate component.

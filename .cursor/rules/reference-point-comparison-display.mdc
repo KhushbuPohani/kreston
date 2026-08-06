@@ -1,0 +1,64 @@
+---
+description: Comparison section display headline "reference point" — h2.display in .comparison-head
+globs: index.html
+alwaysApply: false
+---
+
+# Reference Point — Comparison Section Display (`h2.display` in `.comparison-head`)
+
+When the user says **"reference point"** for the pinned comparison section headline (e.g. "When the jewellery costs lakhs, trust is the product."), match `h2.display` inside `header.comparison-head` in `#comparison`.
+
+## Structure
+
+```html
+<header class="comparison-head">
+  <p class="eyebrow">The Comparison</p>
+  <h2 class="display">When the jewellery costs lakhs,<br>trust is the product.</h2>
+  <p class="lead">One app built for browsing. One built for believing.</p>
+</header>
+```
+
+Pair with brown `.eyebrow` label above and `.lead` subcopy below.
+
+## Visual spec
+
+| Property | Value |
+|----------|-------|
+| Element | `h2.display` inside `.comparison-head` |
+| Font | `var(--serif)` (Instrument Serif) |
+| Size | `var(--display)` → `clamp(2.25rem, 4.4vw, 3.5rem)` |
+| Weight | `400` |
+| Style | **italic** (full line) |
+| Color | `var(--ink-deep)` |
+| Line-height | `1.15` |
+| Margin | `0` |
+| Alignment | centered (via `.comparison-head`) |
+
+## Head wrapper
+
+| Property | Value |
+|----------|-------|
+| Wrapper | `.comparison-head` |
+| Layout | column flex, centered, `gap: 1.5rem` |
+| Max-width | `52rem` |
+
+## vs other headlines
+
+| Class / element | Use |
+|-----------------|-----|
+| `h2.display` in `.comparison-head` | Pinned comparison hero — **italic**, `--display`, `var(--ink-deep)` |
+| `h2.display` (base) | Page section heads — **regular** (not italic), `--display`, `var(--ink)` |
+| `.compare-callout .title` | Scroll callout card — smaller, `clamp(1.35rem, 2.2vw, 1.85rem)` |
+| `h4` in `.cert-feature-head` | Main feature canvas — italic, **`32px`** |
+| `h3.title` in `.overview-sub-head` | Subsection head — regular, `--title-sm` |
+
+## Hierarchy rule
+
+Comparison display must stay **larger** than `.compare-callout .title`. Do not cap at `32px` — use `var(--display)`.
+
+## Do not
+
+- Remove italic — this is the distinguishing trait vs base `.display`.
+- Shrink to `32px` or `--title-sm` — that collapses hierarchy against callout titles.
+- Use plain `h2` without `.display` — loses the section display scale.
+- Match base `.display` color (`var(--ink)`) — comparison uses `var(--ink-deep)`.

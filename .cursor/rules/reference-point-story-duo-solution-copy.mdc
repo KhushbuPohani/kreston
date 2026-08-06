@@ -1,0 +1,87 @@
+---
+description: Canvas annotation solution copy "reference point" — p.copy in .story-duo .side.is-solution
+globs: index.html
+alwaysApply: false
+---
+
+# Reference Point — Story Duo Solution Copy (`p.copy` in `.story-duo`)
+
+When the user says **"reference point"** for canvas annotation design-solution copy (e.g. Trade Off side-by-side summary), match `p.copy` inside `.story-duo .side.is-solution`.
+
+## Structure
+
+```html
+<aside class="to-annot-wrap" aria-label="Trade Off annotation">
+  <div class="story-duo">
+    <div class="side is-friction">
+      <p class="label">User Friction</p>
+      <p class="quote for-idle">Similar pieces look interchangeable — buyers can't tell what they're trading away.</p>
+      <p class="quote for-open">A ₹74,500 gap reads as a discount — not as craft, weight, certification, and resale traded away.</p>
+    </div>
+    <div class="side is-solution">
+      <p class="label">Design Solution</p>
+      <p class="copy for-idle">Side-by-side comparison on price, technique, and weight — with an AI summary that makes the savings vs craft trade-off legible</p>
+      <p class="copy for-open">Attribute rows plus an AI summary name what Celeste saves and what Mira keeps — so the trade-off is decideable, not guessed.</p>
+    </div>
+  </div>
+  <span class="to-annot-line" aria-hidden="true"></span>
+</aside>
+```
+
+Use `.copy` on the **solution** side; use `.quote` on the **friction** side.
+
+## Visual spec — `p.copy` (solution side)
+
+| Property | Value |
+|----------|-------|
+| Element | `p.copy` inside `.story-duo .side.is-solution` |
+| Font | `var(--ui-sans)` |
+| Size | `14px` |
+| Weight | `500` |
+| Color | `#6a6158` |
+| Line-height | `1.45` |
+| Width | `100%` |
+| Margin | `0` |
+
+## Story duo wrapper
+
+| Property | Value |
+|----------|-------|
+| Wrapper | `.story-duo` |
+| Layout | column flex, `gap: 16px`, `align-items: flex-start` |
+| Accent | `padding-left: 12px`, `border-left: 1px solid rgba(162, 130, 90, 0.38)` |
+
+## Side stack
+
+| Side | Label color | Body class |
+|------|-------------|------------|
+| `.is-friction` | `var(--label)` | `.quote` — `16px`, `#3d3832`, weight 500 |
+| `.is-solution` | `#849b89` (sage) | **`.copy`** ← this reference |
+
+Labels: `11px`, weight 700, `0.14em` tracking, uppercase.
+
+## Interactive states (Trade Off)
+
+Pair idle/open copy on the same side:
+
+| Class | When visible |
+|-------|----------------|
+| `.for-idle` | Default — sheet closed |
+| `.for-open` | When parent `.to-feature.is-tradeoff-open` |
+
+Toggle via `display: none` / `display: block`; both share the same `.copy` styling.
+
+## vs other copy styles
+
+| Class | Use |
+|-------|-----|
+| `p.copy` in `.story-duo .is-solution` | Canvas annotation design solution — compact UI sans, `#6a6158` |
+| `p.copy` in `.cert-feature-foot` | Feature footer column — grey sans, `0.875rem`, `var(--muted)` |
+| `.lead` in `.story-duo .is-solution` | Cert feature annotation (var-d) — grey sans, `var(--body)` |
+| `.quote` in `.story-duo .is-friction` | Friction side — darker `#3d3832`, `16px` |
+
+## Do not
+
+- Use `.copy` on the friction side — use `.quote`.
+- Match `.cert-feature-foot .copy` sizing here — annotation copy is `14px` / `#6a6158`, not `0.875rem` / `var(--muted)`.
+- Remove `.for-idle` / `.for-open` when the annotation swaps on interaction.
