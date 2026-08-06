@@ -1,0 +1,46 @@
+---
+description: Gap card label "reference point" — .g-label in .gap-card
+globs: index.html
+alwaysApply: false
+---
+
+# Reference Point — Gap Card Label (`.g-label`)
+
+When the user says **"reference point"** for a gap/problem card label (e.g. "Certifications buyers can't read"), match `.g-label` in `.gap-card` inside `#problem`.
+
+## Structure
+
+```html
+<article class="gap-card">
+  <p class="g-label">Short gap name</p>
+  <h3>Italic serif headline.</h3>
+  <hr /><p class="lead">Supporting detail sentence.</p>
+</article>
+```
+
+Place inside `.gap-grid` under `.gaps-block` / `#problem`.
+
+## Visual spec
+
+| Layer | Class | Treatment |
+|-------|-------|-----------|
+| Card | `.gap-card` | white bg, `var(--border)`, 16px radius, column flex, `gap: 0.75rem` |
+| Label | `.g-label` | `0.8125rem`, weight 500, `0.05em` tracking, uppercase, `#8c6b66` |
+| Headline | `h3` | `var(--serif)`, italic, weight 400, `var(--ink)` |
+| Divider | `hr` | 1px `var(--border)` |
+| Body | `.lead` | `var(--muted)`, `var(--body)` in overview, line-height 1.6 |
+
+## vs other labels
+
+| Class | Use |
+|-------|-----|
+| `.g-label` | Gap card top label — muted brown `#8c6b66` |
+| `.eyebrow.soft` | Section subsection label — grey |
+| `.col-label` | About column label — `var(--label)` brown |
+| `.eyebrow` | Main section label — brown, wider tracking |
+
+## Do not
+
+- Use inline styles on `.g-label` — remove overrides; use base class only.
+- Swap `.g-label` for `.eyebrow.soft` on gap cards — different color and size.
+- Use `.display` or `h3.title` for the card headline — keep plain `h3` italic inside cards.

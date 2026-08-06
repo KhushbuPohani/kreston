@@ -1,0 +1,46 @@
+---
+description: Design "reference point" components like the My Role card in #overview
+globs: index.html
+alwaysApply: false
+---
+
+# Reference Point — Role Card Pattern
+
+When the user says **"reference point"**, **"like the reference point"**, or **"design it like My Role"**, match the `.role-card` component in `#overview`.
+
+For subsection labels (grey eyebrow + title), use the separate **Subsection Head** reference in `reference-point-sub-head.mdc`.
+
+For section intro paragraphs under a display heading, use the **Lead** reference in `reference-point-lead.mdc`.
+
+For gap/problem card labels, use the **Gap Card Label** reference in `reference-point-gap-label.mdc`.
+
+For gap card italic headlines, use the **Gap Card Headline** reference in `reference-point-gap-headline.mdc`.
+
+## Structure
+
+```html
+<div class="role-card">
+  <p class="eyebrow">Label</p>
+  <p class="role-line">Serif italic statement.</p>
+  <div class="tags">
+    <span class="tag">Tag one</span>
+  </div>
+</div>
+```
+
+Tags are optional; omit the `.tags` block when not needed.
+
+## Visual spec
+
+| Layer | Class | Treatment |
+|-------|-------|-----------|
+| Container | `.role-card` | `background: var(--bg-role)`, `border: 1px solid rgba(0,0,0,0.05)`, `border-radius: 16px`, `padding: 1rem 1.25rem`, column flex, `gap: 0.625rem`, `width: 100%` |
+| Label | `.role-card .eyebrow` | `0.75rem`, `#6b7280`, weight 500, uppercase via content |
+| Body | `.role-line` | `var(--serif)`, italic, `clamp(1.0625rem, 1.6vw, 1.375rem)`, `line-height: 1.35`, `var(--ink)` |
+| Tags | `.tag` | pill, `border: 1px solid var(--label)`, `var(--label)`, `0.6875rem`, weight 600, `0.1em` tracking, uppercase |
+
+## Do not
+
+- Reuse brown section `.eyebrow` styling on the card label — card eyebrows are smaller grey (`#6b7280`).
+- Swap `.role-line` for sans-serif body text.
+- Use `.display` or `.title` inside the card; keep hierarchy flat (eyebrow → role-line → optional tags).

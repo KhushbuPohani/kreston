@@ -1,0 +1,60 @@
+---
+description: Main feature canvas headline "reference point" — h4 in .cert-feature-head
+globs: index.html
+alwaysApply: false
+---
+
+# Reference Point — Main Feature Canvas Headline (`h4` in `.cert-feature-head`)
+
+When the user says **"reference point"** for a main-feature canvas title (e.g. "Certification Interpretation"), match plain `h4` inside `header.cert-feature-head` in a scaled feature block (`.cert-feature`, `.to-feature`, `.vault-feature`).
+
+## Structure
+
+```html
+<header class="cert-feature-head">
+  <p class="eyebrow">Main Feature</p>
+  <h4>Certification Interpretation</h4>
+</header>
+```
+
+Use a plain `h4` — no `.title`, `.display`, or extra classes.
+
+Pair with brown `.eyebrow` label above (same as main section eyebrows: `var(--label-size)`, weight 600, `0.2em` tracking, `var(--label)`).
+
+## Visual spec
+
+| Property | Value |
+|----------|-------|
+| Element | `h4` (no class) inside `.cert-feature-head` |
+| Font | `var(--serif)` (Instrument Serif) |
+| Size | `32px` |
+| Weight | `400` |
+| Style | **italic** |
+| Color | `var(--ink-deep)` |
+| Line-height | `1.15` |
+| Margin | `0` |
+| White-space | `nowrap` |
+
+## Head wrapper
+
+| Property | Value |
+|----------|-------|
+| Wrapper | `.cert-feature-head` |
+| Layout | column flex, centered, `gap: 8px` |
+| Position | absolute in scaled canvas (`1240×` Figma artboard) |
+
+## vs other headlines
+
+| Class / element | Use |
+|-----------------|-----|
+| `h4` in `.cert-feature-head` | Main feature canvas title — italic serif, **`32px`** |
+| `h4` in `.disc-card-head` | Feature card title — italic serif, **`24px`** |
+| `h3` in `.gap-card` | Gap punchline — italic, `--h3`, `var(--ink)` |
+| `h3.title` in `.overview-sub-head` | Subsection head — regular (not italic), `--title-sm` |
+| `.display` | Page section heads — largest, `--display` |
+
+## Do not
+
+- Use `.display` on canvas feature heads — reserve for page-level section headers.
+- Match `.disc-card-head h4` (`24px`) — canvas main-feature heads are larger.
+- Use sans-serif or remove italic.

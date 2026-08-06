@@ -1,0 +1,79 @@
+---
+description: Hybrid chat section header "reference point" — .hybrid-chat-head with eyebrow.soft + h3.title + lead
+globs: index.html
+alwaysApply: false
+---
+
+# Reference Point — Hybrid Chat Head (`.hybrid-chat-head`)
+
+When the user says **"reference point"** for the hybrid chat intro block (e.g. "AI + Human, One Chat"), match `header.hybrid-chat-head` in `#ai-layer` → `.hybrid-chat`.
+
+## Structure
+
+```html
+<header class="hybrid-chat-head">
+  <p class="eyebrow soft">Chatbot experience</p>
+  <h3 class="title">AI + Human, One Chat</h3>
+  <p class="lead">Simple questions are answered instantly. High-stakes moments—like gemstone provenance—escalate to specialists in the same thread.</p>
+</header>
+```
+
+Equivalent to `.overview-sub-head.stack-16` — same eyebrow + title treatment, different wrapper class.
+
+## Visual spec — title (`h3.title`)
+
+| Property | Value |
+|----------|-------|
+| Element | `h3.title` inside `.hybrid-chat-head` |
+| Font | `var(--serif)` → Instrument Serif |
+| Size | `var(--title-sm)` → **clamp(1.6rem, 2.6vw, 2.25rem)** |
+| Weight | **400** |
+| Style | **Regular** (not italic); use `<em>` for phrase emphasis only |
+| Color | `var(--ink-deep)` → **#1a1814** |
+| Line-height | **1.1** |
+| Max-width | **40rem** |
+| Margin | **0** |
+
+See also `reference-point-sub-title.mdc` (shared selector) and `reference-point-eyebrow-soft.mdc` (label above).
+
+## Visual spec — wrapper
+
+| Property | Value |
+|----------|-------|
+| Wrapper | `.hybrid-chat-head` |
+| Layout | column flex, `gap: 0.75rem` |
+| Max-width | **52rem** |
+
+## Visual spec — lead (optional third line)
+
+| Property | Value |
+|----------|-------|
+| Element | `.hybrid-chat-head .lead` |
+| Size | **1rem** |
+| Line-height | **1.6** |
+| Color | **#544d4b** |
+| Max-width | **42rem** |
+
+## Scoped CSS
+
+```css
+.hybrid-chat-head .eyebrow.soft { /* see reference-point-eyebrow-soft.mdc */ }
+.hybrid-chat-head h3.title { /* see reference-point-sub-title.mdc */ }
+.hybrid-chat-head .lead { font-size: 1rem; line-height: 1.6; color: #544d4b; }
+```
+
+## vs other headlines
+
+| Class / element | Use |
+|-----------------|-----|
+| **`h3.title` in `.hybrid-chat-head`** | **Subsection head — regular serif, `--title-sm`** |
+| `.hybrid-chat-rationale-title` | Rationale column — separate component |
+| `.hybrid-chat-demo-title` | In-phone demo canvas — UI mockup scale |
+| `.display` | Main section heads — largest, `--display` |
+
+## Do not
+
+- Use `h2` or a custom class (e.g. `.hybrid-chat-title`) — always `h3.title`.
+- Use brown `.eyebrow` — subsection label is `.eyebrow.soft`.
+- Match global `h3` / `h3.title` base size (`--h3`) — subsection titles use `--title-sm` via scoped selector.
+- Confuse with `.ai-touchpoint-head h4` — touchpoint card heads are 24px italic.

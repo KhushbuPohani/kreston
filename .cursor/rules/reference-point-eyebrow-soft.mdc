@@ -1,0 +1,60 @@
+---
+description: Subsection eyebrow label "reference point" — p.eyebrow.soft in .overview-sub-head
+globs: index.html
+alwaysApply: false
+---
+
+# Reference Point — Subsection Eyebrow (`.eyebrow.soft`)
+
+When the user says **"reference point"** for a grey uppercase section label (e.g. "Chatbot placement", "About the project"), match `p.eyebrow.soft` inside `.overview-sub-head` in `#overview`, `#discovery`, or `#ai-layer`.
+
+## Structure
+
+```html
+<div class="overview-sub-head stack-16">
+  <p class="eyebrow soft">Section label</p>
+  <h3 class="title">Headline below</h3>
+</div>
+```
+
+Standalone label only — pair with `h3.title` per `reference-point-sub-head.mdc` / `reference-point-sub-title.mdc`.
+
+## Visual spec
+
+| Property | Value |
+|----------|-------|
+| Element | `p.eyebrow.soft` |
+| Font | `var(--sans)` (Instrument Sans, inherited from body) |
+| Size | `var(--label-size)` → **0.875rem (14px)** |
+| Weight | **500** |
+| Letter-spacing | **0.2em** |
+| Transform | **uppercase** |
+| Color | `var(--label-soft)` → **#9ca3af** |
+| Margin | 0 (default reset) |
+
+Scoped selectors (identical treatment):
+
+```css
+.overview-section .overview-sub-head .eyebrow.soft,
+#discovery .overview-sub-head .eyebrow.soft,
+#ai-layer .overview-sub-head .eyebrow.soft,
+.hybrid-chat-head .eyebrow.soft
+```
+
+Parent wrapper `.overview-sub-head.stack-16` uses `gap: 0.75rem` in `#ai-layer` (1rem elsewhere in overview).
+
+## vs other eyebrows
+
+| Context | Class | Color | Weight |
+|---------|-------|-------|--------|
+| Main section | `.eyebrow` | brown `var(--label)` | 600 |
+| **Subsection (this reference)** | **`.eyebrow.soft`** | **grey `#9ca3af`** | **500** |
+| Hybrid chat head | `.hybrid-chat-head .eyebrow.soft` | same — shared selector |
+| Role card | `.role-card .eyebrow` | `#6b7280` | — |
+
+## Do not
+
+- Use brown `.eyebrow` for subsection labels — always add `.soft`.
+- Use `.g-label` or `.col-label` — different components with different colors/sizes.
+- Bump weight to 600 — subsection eyebrows stay at 500.
+- Apply inline styles — use the shared class only.

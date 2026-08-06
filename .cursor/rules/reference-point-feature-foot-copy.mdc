@@ -1,0 +1,71 @@
+---
+description: Feature footer copy "reference point" — p.copy in .cert-feature-foot
+globs: index.html
+alwaysApply: false
+---
+
+# Reference Point — Feature Footer Copy (`p.copy` in `.cert-feature-foot`)
+
+When the user says **"reference point"** for main-feature footer column copy (e.g. "Turns opaque lab marks into plain language…"), match `p.copy` inside `.cert-feature-foot .col`.
+
+## Structure
+
+```html
+<footer class="cert-feature-foot">
+  <div class="col">
+    <p class="label">About the feature</p>
+    <p class="copy">Turns opaque lab marks into plain language so buyers can verify authenticity without leaving the page.</p>
+  </div>
+  <div class="col">
+    <p class="label">How it helps</p>
+    <p class="copy">Third-party IGI proof replaces seller claims — certificate number, metal, and finish decoded in context.</p>
+  </div>
+  <div class="col">
+    <p class="label">Trade offs</p>
+    <p class="copy">Adds a step before checkout; worth it when a high-value purchase needs proof, not just a badge.</p>
+  </div>
+</footer>
+```
+
+Place below a scaled feature block (`.cert-feature`, `.to-feature`, `.vault-feature`).
+
+## Visual spec — `.copy`
+
+| Property | Value |
+|----------|-------|
+| Element | `p.copy` inside `.cert-feature-foot .col` |
+| Font | `var(--ui-sans)` |
+| Size | `14px` |
+| Weight | `500` |
+| Color | `#6a6158` |
+| Line-height | `1.45` |
+| Margin | `0` |
+
+## Footer stack (per column)
+
+1. `.label` — rose-brown uppercase label (`11px`, weight 700, `#a68985`, `0.12em` tracking)
+2. **`p.copy`** — grey supporting copy ← this reference
+
+## Footer grid
+
+| Property | Value |
+|----------|-------|
+| Wrapper | `.cert-feature-foot` |
+| Layout | 3-column grid, `gap: 28px`, `margin-top: 28px`, `padding: 0 12px` |
+| Column | `.col` — column flex, `gap: 8px` |
+
+## vs other copy styles
+
+| Class | Use |
+|-------|-----|
+| `p.copy` in `.cert-feature-foot` | Feature footer column body — UI sans, `14px`, `#6a6158` |
+| `p.copy` in `.story-duo .is-solution` | Canvas annotation design solution — same UI sans, `14px`, `#6a6158` |
+| `.lead` | Section/column intro — grey sans, `var(--body)` or `var(--lead)` |
+| `.disc-card-head .friction` | Card friction line — grey sans, `var(--body)` |
+| `.body` | Secondary muted copy — `var(--muted-2)` |
+
+## Do not
+
+- Use `.lead` directly when this compact footer copy size is the reference.
+- Use serif, italic, or dark ink (`var(--ink-deep)`) for footer `.copy`.
+- Inline size/color overrides unless the user explicitly asks.

@@ -1,0 +1,55 @@
+---
+description: Gap card headline "reference point" — italic h3 in .gap-card
+globs: index.html
+alwaysApply: false
+---
+
+# Reference Point — Gap Card Headline (`h3` in `.gap-card`)
+
+When the user says **"reference point"** for a gap/problem card headline (e.g. "Confidence ends at checkout"), match plain `h3` inside `.gap-card` in `#problem`.
+
+## Structure
+
+```html
+<article class="gap-card">
+  <p class="g-label">Returns feel risky on high-value items</p>
+  <h3>Confidence ends at checkout</h3>
+  <hr /><p class="lead">Returning a ₹50,000 piece feels uncertain.</p>
+</article>
+```
+
+Use a plain `h3` — no `.title`, `.display`, or extra classes.
+
+## Visual spec
+
+| Property | Value |
+|----------|-------|
+| Element | `h3` (no class) inside `.gap-card` |
+| Font | `var(--serif)` (Instrument Serif) |
+| Size | `var(--h3)` → `clamp(1.15rem, 1.6vw, 1.5rem)` |
+| Weight | `400` |
+| Style | **italic** |
+| Color | `var(--ink)` |
+| Line-height | `1.1` (from base `h3`) |
+
+## Full gap card stack
+
+1. `.g-label` — muted brown uppercase label
+2. **`h3`** — italic serif headline ← this reference
+3. `hr` — divider
+4. `.lead` — grey body copy
+
+## vs other headlines
+
+| Class | Use |
+|-------|-----|
+| `h3` in `.gap-card` | Card punchline — italic, compact |
+| `h3.title` | Subsection heads — not italic, `--title-sm` |
+| `.display` | Main section heads — larger, not italic |
+| `.compare-side .claim` | Comparison VS callout — similar italic serif, `1.05rem` |
+
+## Do not
+
+- Add `.title` or `.display` to gap card headlines.
+- Use sans-serif or remove italic.
+- Use `<h2>` — keep `h3` for card-level hierarchy.

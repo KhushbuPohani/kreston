@@ -1,0 +1,107 @@
+---
+description: Lead paragraph "reference point" — grey .lead for section intros and column copy
+globs: index.html
+alwaysApply: false
+---
+
+# Reference Point — Lead Paragraph (`.lead`)
+
+When the user says **"reference point"** for grey intro/body copy on `.lead`, match one of the patterns below.
+
+## Pattern A — About column copy (`.about-col`)
+
+Use under `.col-label` + `.col-title` in the about grid.
+
+```html
+<div class="about-col">
+  <div>
+    <p class="col-label">The opportunity</p>
+    <p class="col-title">1000+ artisans.<br />Zero national reach.</p>
+    <p class="lead">Giving buyers access to one-of-a-kind pieces with a story behind every design, moving locally trusted talent into a national spotlight.</p>
+  </div>
+</div>
+```
+
+## Pattern B — Section intro (under `.display`)
+
+Use directly after a section head block, before bullets or cards.
+
+```html
+<div class="overview-head stack-16">
+  <p class="eyebrow">Section label</p>
+  <h2 class="display">Main section headline</h2>
+</div>
+<p class="lead">One-sentence section intro in grey sans-serif.</p>
+```
+
+## Pattern C — Hybrid chat head (under `h3.title`)
+
+Use as the third line in `header.hybrid-chat-head` after `.eyebrow.soft` + `h3.title`.
+
+```html
+<header class="hybrid-chat-head">
+  <p class="eyebrow soft">Chatbot experience</p>
+  <h3 class="title">AI + Human, One Chat</h3>
+  <p class="lead">Simple questions are answered instantly. High-stakes moments—like gemstone provenance—escalate to specialists in the same thread.</p>
+</header>
+```
+
+### Visual spec — Pattern C (scoped)
+
+| Property | Value |
+|----------|-------|
+| Element | `.hybrid-chat-head .lead` |
+| Font | `var(--sans)` (Instrument Sans, inherited) |
+| Size | **1rem** (16px) — not base `var(--lead)` |
+| Color | **#544d4b** — warmer than `var(--muted)` |
+| Weight | `400` |
+| Line-height | **1.6** |
+| Max-width | **42rem** |
+| Margin | **0** |
+
+```css
+.hybrid-chat-head .lead {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #544d4b;
+  max-width: 42rem;
+}
+```
+
+Full header block: `reference-point-hybrid-chat-head.mdc`.
+
+## Visual spec — Patterns A & B (base)
+
+| Property | Value |
+|----------|-------|
+| Class | `.lead` |
+| Font | `var(--sans)` (Instrument Sans, inherited) |
+| Size | `var(--body)` in `.overview-section`; base `.lead` uses `var(--lead)` elsewhere |
+| Color | `var(--muted)` → `#6b6b6b` |
+| Weight | `400` |
+| Line-height | `1.6` |
+
+## About column stack
+
+1. `.col-label` — muted brown uppercase label (matches `.g-label`)
+2. `.col-title` — italic serif punchline (matches gap-card `h3`)
+3. **`.lead`** — grey supporting copy ← this reference
+
+## vs other text styles
+
+| Class | Use |
+|-------|-----|
+| `.lead` (base / overview) | Section intro or column copy — `var(--muted)`, `var(--lead)` or `var(--body)` |
+| **`.hybrid-chat-head .lead`** | **Hybrid chat intro — 1rem, `#544d4b`, max-width 42rem** |
+| `.body` | Smaller secondary copy — `var(--muted-2)` |
+| `.role-line` | Role card statement — serif italic |
+| `.bullet .lead` | Overview bullet items — same grey treatment |
+| `.hybrid-chat-rationale-copy` | Rationale column body — 15px, separate component |
+
+## Do not
+
+- Use serif or italic for `.lead`.
+- Use `.body` when `.lead` grey intro copy is the reference.
+- Apply base `var(--lead)` size to `.hybrid-chat-head .lead` — that block is fixed at **1rem**.
+- Inline style overrides unless the user explicitly asks.
