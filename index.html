@@ -1682,6 +1682,1267 @@
       background: #7a5932;
       opacity: 0;
     }
+
+    /* ===== Hero bento (from price-breakdown-hero) ===== */
+
+    #heroVisual {
+        background: var(--bg-warm);
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        position: relative;
+        padding: clamp(1.5rem, 4vw, 3.5rem) 1.25rem;
+        overflow: hidden;
+    }
+
+    #heroVisual .hero-bento {
+        position: relative;
+        z-index: 3;
+        width: min(1080px, 100%);
+        display: grid;
+        grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.12fr) minmax(0, 0.92fr);
+        gap: 12px;
+        align-items: start;
+    }
+
+    #heroVisual .bento-left,
+      #heroVisual .bento-right {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        min-width: 0;
+    }
+
+    #heroVisual .bento-right {
+        min-height: 0;
+    }
+
+    #heroVisual .hero-bento > .price-card {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+    }
+
+    #heroVisual .bento-right > .cert-card {
+        width: 100%;
+        height: auto;
+        flex: 0 0 auto;
+    }
+
+    #heroVisual .bento-left > .sat {
+        height: auto;
+    }
+
+    #heroVisual .bento-right > .sat-chat {
+        flex: 1 1 auto;
+        min-height: 0;
+        height: auto;
+        overflow: hidden;
+    }
+
+    #heroVisual .hero-glow {
+        position: absolute;
+        width: 560px;
+        height: 560px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(207, 167, 100, 0.28), rgba(207, 167, 100, 0) 68%);
+        pointer-events: none;
+        opacity: 0;
+        z-index: 1;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #heroVisual .hero-ring {
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 1.5px solid rgba(122, 89, 50, 0.55);
+        pointer-events: none;
+        opacity: 0;
+        z-index: 2;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #heroVisual .hero-particles {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 2;
+    }
+
+    #heroVisual .hero-particles i {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #7a5932;
+        opacity: 0;
+    }
+
+    #heroVisual .price-card {
+        width: 100%;
+        background: var(--cream-ui);
+        border: 0.5px solid var(--bronze);
+        border-radius: 4px;
+        padding: 1.15rem 1.2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        box-shadow: 0 18px 40px -14px rgba(0,0,0,0.06);
+        opacity: 0;
+        position: relative;
+        z-index: 3;
+    }
+
+    #heroVisual .price-card .pc-callout {
+        margin-top: 0.25rem;
+    }
+
+    #heroVisual .pc-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.5rem;
+    }
+
+    #heroVisual .pc-title {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+    }
+
+    #heroVisual .spark-slot {
+        width: 23.5px;
+        height: 23.5px;
+        flex-shrink: 0;
+        position: relative;
+        display: grid;
+        place-items: center;
+    }
+
+    #heroVisual .spark {
+        position: absolute;
+        color: #7a5932;
+        z-index: 4;
+        pointer-events: none;
+        transform-origin: 50% 50%;
+    }
+
+    #heroVisual .spark svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+        overflow: visible;
+    }
+
+    #heroVisual .spark .star-fill {
+        fill: currentColor;
+        opacity: 0;
+    }
+
+    #heroVisual .spark .star-stroke {
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 16;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+    }
+
+    #heroVisual .spark .ray {
+        stroke: currentColor;
+        stroke-width: 16;
+        stroke-linecap: round;
+    }
+
+    #heroVisual .pc-title h2 {
+        font-family: var(--ui-serif);
+        font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+        font-weight: 400;
+        color: var(--ink-deep);
+        white-space: nowrap;
+    }
+
+    #heroVisual .fair-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        background: var(--sage-bg);
+        border: 0.5px solid var(--sage);
+        border-radius: 5px;
+        padding: 0.4rem;
+        color: var(--sage);
+        font-family: var(--ui-sans);
+        font-size: 0.75rem;
+        letter-spacing: 0.02em;
+    }
+
+    #heroVisual .fair-badge img {
+        width: 0.875rem;
+        height: 0.875rem;
+    }
+
+    #heroVisual .pc-price {
+        font-family: var(--ui-serif);
+        font-weight: 700;
+        font-size: 1.75rem;
+        letter-spacing: -0.02em;
+        color: #2d2d3a;
+    }
+
+    #heroVisual .pc-sub {
+        font-family: var(--ui-sans);
+        font-size: 0.6875rem;
+        color: #6b7280;
+        letter-spacing: 0.02em;
+        margin-top: 0.25rem;
+    }
+
+    #heroVisual .pc-where {
+        border-top: 0.5px solid rgba(162,130,90,0.3);
+        padding-top: 0.3rem;
+        font-family: var(--ui-serif);
+        font-size: 1rem;
+        color: var(--ink-deep);
+    }
+
+    #heroVisual .pc-row {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+
+    #heroVisual .pc-row-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.5rem;
+    }
+
+    #heroVisual .pc-row-left {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.15rem 0.35rem;
+        font-family: var(--ui-sans);
+        font-size: 0.6875rem;
+        font-weight: 700;
+        color: #4d4c4c;
+        letter-spacing: 0.02em;
+    }
+
+    #heroVisual .pc-pct {
+        font-weight: 600;
+        color: var(--gold-text);
+        font-size: 0.625rem;
+    }
+
+    #heroVisual .fair-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        background: var(--sage-bg);
+        border-radius: 100px;
+        padding: 0.125rem 0.375rem;
+        color: var(--sage);
+        font-size: 0.625rem;
+        font-weight: 700;
+    }
+
+    #heroVisual .fair-chip img {
+        width: 0.75rem;
+        height: 0.75rem;
+    }
+
+    #heroVisual .pc-amt {
+        font-family: var(--ui-serif);
+        font-weight: 500;
+        font-size: 1.125rem;
+        color: var(--gold-text);
+        white-space: nowrap;
+    }
+
+    #heroVisual .bar {
+        height: 4px;
+        background: #f4efec;
+        border-radius: 2px;
+        overflow: hidden;
+    }
+
+    #heroVisual .bar > span {
+        display: block;
+        height: 100%;
+        background: var(--gold);
+        border-radius: 2px;
+        transform-origin: left center;
+        transform: scaleX(0);
+    }
+
+    #heroVisual .pc-detail {
+        background: #fcfbf7;
+        border: 0.5px solid rgba(162,130,90,0.22);
+        border-radius: 8px;
+        padding: 0.75rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.625rem;
+        margin-top: 0.35rem;
+    }
+
+    #heroVisual .pc-detail-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: var(--ui-sans);
+        font-size: 0.6875rem;
+        color: #4d4c4c;
+    }
+
+    #heroVisual .pc-detail-top strong {
+        color: var(--ink-deep);
+        font-weight: 700;
+    }
+
+    #heroVisual .date-chip {
+        border: 0.5px solid rgba(162,130,90,0.35);
+        border-radius: 100px;
+        padding: 0.28rem 0.5rem;
+        font-size: 0.5625rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: #767575;
+        white-space: nowrap;
+    }
+
+    #heroVisual .pc-table {
+        border: 0.5px solid rgba(162,130,90,0.2);
+        border-radius: 6px;
+        overflow: hidden;
+        background: #fff;
+        font-family: var(--ui-sans);
+    }
+
+    #heroVisual .pc-table-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 0.75rem;
+        padding: 0.55rem 0.75rem;
+        font-size: 0.6875rem;
+    }
+
+    #heroVisual .pc-table-row + .pc-table-row {
+        border-top: 0.5px solid rgba(162,130,90,0.22);
+        background: rgba(162,130,90,0.08);
+        align-items: center;
+    }
+
+    #heroVisual .pc-table-row .k {
+        font-weight: 700;
+        color: #767575;
+        font-size: 0.625rem;
+        max-width: 4.5rem;
+    }
+
+    #heroVisual .pc-table-row .v {
+        color: var(--ink-deep);
+        text-align: right;
+    }
+
+    #heroVisual .pc-table-row .v em {
+        font-family: var(--ui-serif);
+        font-style: normal;
+        font-weight: 600;
+        font-size: 0.9375rem;
+    }
+
+    #heroVisual .pc-note {
+        font-family: var(--ui-sans);
+        font-size: 0.625rem;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+        color: #4d4c4c;
+    }
+
+    #heroVisual .pc-callout {
+        background: rgba(162,130,90,0.12);
+        border: 1px solid var(--bronze);
+        border-radius: 8px;
+        padding: 1rem;
+        font-family: var(--ui-sans);
+        font-size: 0.625rem;
+        line-height: 1.66;
+        color: var(--ink-deep);
+    }
+
+    #heroVisual .pc-callout strong {
+        font-weight: 700;
+    }
+
+    #heroVisual .pc-divider-row {
+        border-bottom: 0.5px solid rgba(162,130,90,0.2);
+        padding-bottom: 0.85rem;
+    }
+
+    #heroVisual .cert-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        padding: 16px 12px 16px;
+        border-radius: 14px;
+        border: 0.5px solid rgba(162, 130, 90, 0.28);
+        background: linear-gradient(180deg, #fffdf9 0%, #faf7f2 100%);
+        box-shadow: 0 14px 32px -12px rgba(0,0,0,0.06);
+        opacity: 0;
+        z-index: 2;
+        overflow: hidden;
+    }
+
+    #heroVisual .cert-card .cert-body {
+        flex: 0 0 auto;
+        min-height: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    #heroVisual .cert-card .metal-list {
+        flex: 0 0 auto;
+        gap: 6px;
+    }
+
+    #heroVisual .cert-card .metal-item {
+        gap: 2px;
+    }
+
+    #heroVisual .cert-card .metal-item .desc {
+        display: none;
+    }
+
+    #heroVisual .cert-card .cert-sources {
+        margin-top: 0;
+        gap: 6px;
+    }
+
+    #heroVisual .cert-card .cert-ask {
+        margin-top: 4px;
+        height: 32px;
+    }
+
+    #heroVisual .cert-handle {
+        display: none;
+    }
+
+    #heroVisual .cert-body {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+    }
+
+    #heroVisual .cert-head {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+    }
+
+    #heroVisual .cert-spark {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+        display: block;
+    }
+
+    #heroVisual .cert-titles {
+        flex: 1;
+        min-width: 0;
+    }
+
+    #heroVisual .cert-titles h3 {
+        font-family: var(--ui-serif);
+        font-size: 15px;
+        font-weight: 500;
+        letter-spacing: 0.01em;
+        color: #1a1814;
+        line-height: 1.15;
+    }
+
+    #heroVisual .cert-titles p {
+        font-family: var(--ui-sans);
+        font-size: 8px;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #a2825a;
+        margin-top: 2px;
+    }
+
+    #heroVisual .cert-close {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+        display: block;
+        opacity: 0.7;
+    }
+
+    #heroVisual .cert-tabs {
+        display: flex;
+        width: 100%;
+        border-bottom: 1px solid rgba(162, 130, 90, 0.28);
+    }
+
+    #heroVisual .cert-tabs .tab {
+        flex: 1;
+        text-align: center;
+        padding: 8px 4px 10px;
+        font-family: var(--ui-sans);
+        font-size: 9px;
+        font-weight: 500;
+        letter-spacing: 0.01em;
+        color: #8a837a;
+        position: relative;
+    }
+
+    #heroVisual .cert-tabs .tab.is-on {
+        font-weight: 600;
+        color: #1a1814;
+        background: rgba(162, 130, 90, 0.06);
+        border-right: 1px solid rgba(162, 130, 90, 0.22);
+    }
+
+    #heroVisual .cert-tabs .tab.is-on::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 120px;
+        height: 2px;
+        border-radius: 1px 1px 0 0;
+        background: #a2825a;
+    }
+
+    #heroVisual .metal-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    #heroVisual .metal-item {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    #heroVisual .metal-item .top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+    }
+
+    #heroVisual .metal-item .lab {
+        font-family: var(--ui-sans);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        text-transform: capitalize;
+        color: #767575;
+    }
+
+    #heroVisual .metal-item .val {
+        font-family: var(--ui-serif);
+        font-size: 14px;
+        font-weight: 400;
+        color: #000;
+        line-height: 1;
+        text-align: center;
+    }
+
+    #heroVisual .metal-item .desc {
+        font-family: var(--ui-sans);
+        font-size: 10px;
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        line-height: 1.3;
+        color: #767575;
+    }
+
+    #heroVisual .cert-rule {
+        width: 100%;
+        height: 0;
+        border-top: 1px solid rgba(162, 130, 90, 0.22);
+    }
+
+    #heroVisual .cert-sources {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+    }
+
+    #heroVisual .cert-sources .label {
+        font-family: var(--ui-sans);
+        font-size: 8px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #8a837a;
+    }
+
+    #heroVisual .source-row {
+        display: flex;
+        gap: 6px;
+        overflow-x: auto;
+        scrollbar-width: none;
+        width: 100%;
+        padding-bottom: 2px;
+    }
+
+    #heroVisual .source-row::-webkit-scrollbar {
+        display: none;
+    }
+
+    #heroVisual .source-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 8px;
+        border-radius: 999px;
+        border: 1px solid rgba(162, 130, 90, 0.22);
+        background: #fffdf9;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    #heroVisual .source-chip .fav {
+        width: 15px;
+        height: 15px;
+        border-radius: 8px;
+        background: rgba(162, 130, 90, 0.06);
+        display: grid;
+        place-items: center;
+        font-family: var(--ui-sans);
+        font-size: 8px;
+        font-weight: 700;
+        color: #a2825a;
+    }
+
+    #heroVisual .source-chip .txt {
+        font-family: var(--ui-sans);
+        font-size: 8px;
+        color: #1a1814;
+        line-height: 1.2;
+    }
+
+    #heroVisual .cert-ask {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        width: 100%;
+        height: 36px;
+        padding: 8px;
+        border: 0;
+        background: #1a1814;
+        color: #fcf7f0;
+        font-family: var(--ui-sans);
+        font-size: 10px;
+        font-weight: 400;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        cursor: default;
+    }
+
+    #heroVisual .cert-ask img {
+        width: 14px;
+        height: 14px;
+        filter: invert(1);
+        flex-shrink: 0;
+    }
+
+    #heroVisual .sat {
+        z-index: 2;
+        opacity: 0;
+        pointer-events: none;
+        width: 100%;
+        height: 100%;
+    }
+
+    #heroVisual .sat-proof {
+        padding: 12px 14px;
+        border-radius: 12px;
+        border: 0.5px solid rgba(162, 130, 90, 0.28);
+        background: #fffaf4;
+        box-shadow: 0 12px 28px -10px rgba(0,0,0,0.08);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #heroVisual .sat-proof-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 8px;
+        margin-bottom: 8px;
+        flex-wrap: wrap;
+    }
+
+    #heroVisual .sat-proof-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 10px;
+        font-weight: 500;
+        color: #4d4c4c;
+        white-space: nowrap;
+    }
+
+    #heroVisual .sat-proof-item .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        flex-shrink: 0;
+    }
+
+    #heroVisual .sat-proof-item .dot.is-live {
+        background: #3d9a6a;
+    }
+
+    #heroVisual .sat-proof-item .dot.is-wish {
+        background: #a88055;
+    }
+
+    #heroVisual .sat-proof-item .trend {
+        width: 10px;
+        height: 10px;
+    }
+
+    #heroVisual .sat-proof-divider {
+        height: 0;
+        border-top: 0.5px solid rgba(162, 130, 90, 0.22);
+        margin: 8px 0;
+    }
+
+    #heroVisual .sat-proof-press {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    #heroVisual .sat-proof-press .seen {
+        font-size: 8px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        color: #8a837a;
+    }
+
+    #heroVisual .sat-proof-press .pub {
+        font-family: var(--ui-serif);
+        font-size: 12px;
+        color: #1a1814;
+    }
+
+    #heroVisual .sat-trade {
+        padding: 12px 14px 14px;
+        border-radius: 14px;
+        border: 0.5px solid rgba(162, 130, 90, 0.28);
+        background: linear-gradient(180deg, #fffdf9 0%, #faf7f2 100%);
+        box-shadow: 0 14px 32px -12px rgba(0,0,0,0.08);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: auto;
+        align-self: stretch;
+        overflow: hidden;
+    }
+
+    #heroVisual .sat-trade .sat-trade-summary {
+        margin-top: 8px;
+    }
+
+    #heroVisual .sat-trade-head {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 8px;
+        margin-bottom: 10px;
+    }
+
+    #heroVisual .sat-trade-head h3 {
+        font-family: var(--ui-serif);
+        font-size: 16px;
+        font-weight: 500;
+        color: #1a1814;
+    }
+
+    #heroVisual .sat-trade-head .sub {
+        font-size: 9px;
+        color: #8a837a;
+        margin-top: 2px;
+    }
+
+    #heroVisual .sat-trade-head img {
+        width: 16px;
+        height: 16px;
+        opacity: 0.65;
+    }
+
+    #heroVisual .sat-trade-pair {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        margin-bottom: 10px;
+        position: relative;
+    }
+
+    #heroVisual .sat-trade-piece {
+        text-align: center;
+    }
+
+    #heroVisual .sat-trade-piece .thumb {
+        width: 56px;
+        height: 56px;
+        border-radius: 8px;
+        overflow: hidden;
+        margin: 0 auto 6px;
+        border: 0.5px solid rgba(162, 130, 90, 0.22);
+    }
+
+    #heroVisual .sat-trade-piece .thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    #heroVisual .sat-trade-piece .name {
+        font-size: 9px;
+        font-weight: 600;
+        color: #1a1814;
+        line-height: 1.2;
+    }
+
+    #heroVisual .sat-trade-piece .price {
+        font-family: var(--ui-serif);
+        font-size: 12px;
+        color: var(--gold-text);
+        margin-top: 2px;
+    }
+
+    #heroVisual .sat-trade-vs {
+        position: absolute;
+        left: 50%;
+        top: 22px;
+        transform: translateX(-50%);
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: #1a1814;
+        color: #fcf7f0;
+        font-size: 8px;
+        font-weight: 700;
+        display: grid;
+        place-items: center;
+        z-index: 1;
+    }
+
+    #heroVisual .sat-trade-row {
+        display: grid;
+        grid-template-columns: 52px 1fr 1fr;
+        gap: 4px;
+        font-size: 9px;
+        padding: 5px 0;
+        border-top: 0.5px solid rgba(162, 130, 90, 0.16);
+    }
+
+    #heroVisual .sat-trade-row .lab {
+        color: #8a837a;
+        font-weight: 600;
+    }
+
+    #heroVisual .sat-trade-row .cel,
+      #heroVisual .sat-trade-row .mira {
+        color: #1a1814;
+    }
+
+    #heroVisual .sat-trade-row .mira {
+        color: var(--gold-text);
+        font-weight: 600;
+    }
+
+    #heroVisual .sat-trade-summary {
+        margin-top: 8px;
+        padding: 8px;
+        border-radius: 8px;
+        background: rgba(162, 130, 90, 0.08);
+        font-size: 9px;
+        line-height: 1.4;
+        color: #4d4c4c;
+    }
+
+    #heroVisual .sat-chat {
+        padding: 12px;
+        border-radius: 14px;
+        border: 0.5px solid rgba(162, 130, 90, 0.28);
+        background: #fffaf4;
+        box-shadow: 0 12px 28px -10px rgba(0,0,0,0.08);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 8px;
+    }
+
+    #heroVisual .sat-chat-thread {
+        flex: 1;
+        min-height: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        justify-content: flex-start;
+        overflow: auto;
+        scrollbar-width: none;
+    }
+
+    #heroVisual .sat-chat-thread::-webkit-scrollbar {
+        display: none;
+    }
+
+    #heroVisual .sat-chat-bubble.is-user {
+        flex-direction: row-reverse;
+    }
+
+    #heroVisual .sat-chat-bubble.is-user .msg {
+        border-radius: 10px 10px 3px 10px;
+        background: rgba(162, 130, 90, 0.12);
+        border-color: rgba(162, 130, 90, 0.28);
+    }
+
+    #heroVisual .sat-chat-bubble.is-user .av {
+        background: var(--bronze);
+        font-size: 8px;
+    }
+
+    #heroVisual .sat-chat-pills {
+        margin-top: 0;
+        flex-shrink: 0;
+    }
+
+    #heroVisual .sat-chat-expert {
+        margin-top: auto;
+        flex-shrink: 0;
+    }
+
+    #heroVisual .sat-chat-product {
+        flex-shrink: 0;
+        margin-bottom: 0;
+    }
+
+    #heroVisual .sat-chat-product {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 10px;
+    }
+
+    #heroVisual .sat-chat-product img {
+        width: 36px;
+        height: 36px;
+        border-radius: 6px;
+        object-fit: cover;
+    }
+
+    #heroVisual .sat-chat-product h4 {
+        font-family: var(--ui-serif);
+        font-size: 13px;
+        font-weight: 500;
+        color: #1a1814;
+    }
+
+    #heroVisual .sat-chat-product p {
+        font-size: 9px;
+        color: #a2825a;
+        margin-top: 2px;
+    }
+
+    #heroVisual .sat-chat-bubble {
+        display: flex;
+        gap: 8px;
+        align-items: flex-start;
+    }
+
+    #heroVisual .sat-chat-bubble .av {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: #1a1814;
+        color: #fcf7f0;
+        font-size: 10px;
+        font-weight: 700;
+        display: grid;
+        place-items: center;
+        flex-shrink: 0;
+    }
+
+    #heroVisual .sat-chat-bubble .msg {
+        flex: 1;
+        padding: 8px 10px;
+        border-radius: 10px 10px 10px 3px;
+        border: 0.5px solid #d7cab5;
+        background: #fff;
+        font-size: 10px;
+        line-height: 1.4;
+        color: #1a1814;
+    }
+
+    #heroVisual .sat-chat-pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 8px;
+    }
+
+    #heroVisual .sat-chat-pills span {
+        padding: 5px 8px;
+        border-radius: 999px;
+        border: 1px solid #d7cab5;
+        background: #fff;
+        font-size: 9px;
+        color: #1a1814;
+    }
+
+    #heroVisual .sat-chat-expert {
+        margin-top: 8px;
+        width: 100%;
+        padding: 8px;
+        border-radius: 999px;
+        border: 1px solid #a2825a;
+        background: transparent;
+        color: #a2825a;
+        font-size: 9px;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+    }
+
+    #heroVisual .sat-chat-expert img {
+        width: 14px;
+        height: 14px;
+    }
+
+    #heroVisual .sat-emi {
+        padding: 14px;
+        border-radius: 8px;
+        border: 0.5px solid rgba(162, 130, 90, 0.5);
+        background: #fffaf4;
+        box-shadow: 0 12px 28px -10px rgba(0,0,0,0.08);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: flex-start;
+        height: auto;
+        align-self: start;
+    }
+
+    #heroVisual .sat-emi-title {
+        font-family: var(--ui-sans);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.6px;
+        color: #a88055;
+    }
+
+    #heroVisual .sat-emi-rule {
+        height: 0.5px;
+        background: rgba(162, 130, 90, 0.35);
+        width: 100%;
+    }
+
+    #heroVisual .sat-emi-list {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #heroVisual .sat-emi-row {
+        display: grid;
+        grid-template-columns: 42px 48px 1fr;
+        align-items: baseline;
+        gap: 8px;
+        padding: 8px 0;
+        border-bottom: 0.5px solid rgba(162, 130, 90, 0.35);
+        font-family: var(--ui-sans);
+        font-size: 12px;
+        color: #8a837a;
+    }
+
+    #heroVisual .sat-emi-row:last-child {
+        border-bottom: 0;
+    }
+
+    #heroVisual .sat-emi-row .amt {
+        justify-self: end;
+        font-family: var(--ui-serif);
+        font-size: 18px;
+        line-height: 1;
+        color: var(--ink-deep);
+        text-align: right;
+    }
+
+    #heroVisual .sat-emi-row .amt small {
+        font-family: var(--ui-sans);
+        font-size: 10px;
+        font-weight: 400;
+        margin-left: 2px;
+        color: #8a837a;
+    }
+
+    #heroVisual .sat-emi-banks {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 6px 8px;
+        font-family: var(--ui-sans);
+        font-size: 11px;
+        color: #8a837a;
+        line-height: 1.38;
+    }
+
+    #heroVisual .sat-emi-bank-logos {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        flex-wrap: nowrap;
+    }
+
+    #heroVisual .sat-emi-bank-logos img {
+        height: 18px;
+        width: 18px;
+        display: block;
+        border-radius: 2px;
+        object-fit: contain;
+    }
+
+    #heroVisual .sat-emi-banks-note {
+        color: #8a837a;
+        white-space: nowrap;
+    }
+
+    #heroVisual .sat-track {
+        padding: 12px;
+        border-radius: 8px;
+        border: 0.5px solid rgba(162, 130, 90, 0.35);
+        background: #fff;
+        box-shadow: 0 12px 28px -10px rgba(0,0,0,0.08);
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        height: auto;
+        align-self: start;
+    }
+
+    #heroVisual .sat-track-block {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+    }
+
+    #heroVisual .sat-track-details {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    #heroVisual .sat-track-col {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        min-width: 0;
+    }
+
+    #heroVisual .sat-track-label {
+        font-family: var(--ui-sans);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #8a837a;
+    }
+
+    #heroVisual .sat-track-value {
+        font-family: var(--ui-sans);
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--ink-deep);
+        white-space: nowrap;
+    }
+
+    #heroVisual .sat-track-col:first-child .sat-track-value {
+        font-size: 14px;
+    }
+
+    #heroVisual .sat-track-copy {
+        flex-shrink: 0;
+        padding: 6px 12px;
+        border-radius: 4px;
+        border: 0.5px solid var(--bronze);
+        background: #fff;
+        font-family: var(--ui-sans);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: var(--bronze);
+        cursor: default;
+        pointer-events: auto;
+    }
+
+    @media (max-width: 1100px) {
+      #heroVisual .hero-bento {
+        grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.15fr) minmax(0, 0.95fr);
+        gap: 10px;
+      }
+
+    }
+
+    @media (max-width: 980px) {
+      #heroVisual .hero-bento {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+        width: min(720px, 100%);
+      }
+
+      #heroVisual .bento-left {
+        display: none;
+      }
+
+    }
+
+    @media (max-width: 720px) {
+      #heroVisual .hero-bento {
+        grid-template-columns: 1fr;
+        width: min(400px, 100%);
+      }
+
+      #heroVisual .bento-right {
+        display: none;
+      }
+
+    }
+
+
     .price-card {
       width: min(353px, 100%);
       background: var(--cream-ui);
@@ -1929,6 +3190,7 @@
     #discovery .overview-sub-head h3.title,
     #ai-layer .overview-sub-head h3.title,
     .hybrid-chat-head h3.title,
+    #guardrails > .stack-16 > h3.title,
     #guardrails > .stack-32 > h3.title {
       margin: 0;
       font-family: var(--serif);
@@ -2136,7 +3398,8 @@
       justify-content: center;
       gap: clamp(2rem, 4vw, 3.5rem);
       padding-block: clamp(1.5rem, 3vw, 2.5rem);
-      will-change: transform;
+      /* Avoid will-change:transform — it forces ScrollTrigger pinType:"transform"
+         without a pin-spacer, which offsets later triggers past document end. */
     }
     .phone-shell.has-frames > .frame-screen {
       position: absolute;
@@ -3254,6 +4517,91 @@
     }
     .phone-shell--kreston .k-compare-hybrid .hybrid-chat-demo-tap {
       display: none;
+    }
+
+    /* Comparison frame 0 — exact Figma 1058:2815 hybrid chat sheet */
+    .k-compare-hybrid .hybrid-chat-demo-sheet-head {
+      padding: 16px 20px 12.5px;
+    }
+    .k-compare-hybrid .hybrid-chat-demo-messages {
+      padding: 16px 20px;
+      gap: 0;
+    }
+    .k-compare-hybrid .hybrid-chat-demo-ai-status,
+    .k-compare-hybrid .hybrid-chat-demo-sender {
+      display: none;
+    }
+    .k-compare-hybrid .hybrid-chat-demo-bubble-wrap {
+      flex: 0 1 auto;
+      gap: 0;
+    }
+    .k-compare-hybrid .hybrid-chat-demo-avatar.is-ai {
+      box-shadow: none;
+    }
+    .k-compare-hybrid .hybrid-chat-demo-bubble {
+      padding: 10.5px 12.5px;
+      border: 0.5px solid #d7cab5;
+      border-radius: 14px 14px 14px 4px;
+      font-size: 13px;
+      line-height: 18.85px;
+      max-width: 288px;
+    }
+    .k-compare-hybrid .hybrid-chat-demo-bubble-row.is-ai .hybrid-chat-demo-bubble {
+      border-color: #d7cab5;
+      background: #fff;
+    }
+    .k-compare-hybrid .hybrid-chat-demo-pills {
+      padding: 0 20px 12px;
+    }
+    .k-compare-hybrid .hybrid-chat-demo-pills span {
+      border: 1px solid #d7cab5;
+      background: #fff;
+      padding: 9px 13px;
+      font-size: 11px;
+      font-weight: 400;
+      color: #1a1814;
+    }
+    .k-compare-hybrid .hybrid-chat-demo-expert {
+      margin: 0 20px 12px;
+      height: auto;
+      padding: 13px 17px;
+      border: 1px solid #a2825a;
+      border-radius: 999px;
+      background: transparent;
+      color: #a2825a;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.48px;
+      text-transform: uppercase;
+      gap: 8px;
+      box-shadow: none;
+    }
+    .k-compare-hybrid .hybrid-chat-demo-expert img {
+      width: 18px;
+      height: 18px;
+      filter: none;
+    }
+    .k-compare-hybrid .hybrid-chat-demo-input-row {
+      padding: 12.5px 20px 16px;
+      border-top: 0.5px solid #d7cab5;
+      background: #fbf5ed;
+      gap: 8px;
+    }
+    .k-compare-hybrid .hybrid-chat-demo-input {
+      height: 40px;
+      padding: 0 15px;
+      border: 1px solid #a2825a;
+      border-radius: 999px;
+      background: #fff;
+      color: #767575;
+      font-size: 13px;
+      font-weight: 400;
+    }
+    .k-compare-hybrid .hybrid-chat-demo-send {
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+      background: #29251f;
     }
 
     /* Kreston Frame 3 — Support chat sheet (Figma 764:11141) */
@@ -5747,6 +7095,14 @@
       line-height: 1.45;
       color: #6a6158;
     }
+    .disc-card-foot > p.lead {
+      margin: 0;
+      font-family: var(--ui-sans);
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.45;
+      color: #6a6158;
+    }
     .disc-card-foot li.lead::before,
     .sp-feature-cards .disc-card-foot li::before {
       color: #6a6158;
@@ -5998,6 +7354,7 @@
       color: var(--ink-deep);
     }
     #post-purchase .vault-feature .story-duo .quote,
+    #post-purchase .vault-feature .story-duo .copy,
     #post-purchase .vault-feature .story-duo .solution-list li,
     #post-purchase .pp-arrival,
     #post-purchase .pp-detail-value {
@@ -6019,7 +7376,9 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
-    #post-purchase .vault-feature .story-duo .solution-list li {
+    #post-purchase .vault-feature .story-duo .solution-list li,
+    #post-purchase .vault-feature .story-duo .copy {
+      margin: 0;
       color: #6b5e56;
     }
     #post-purchase .vault-feature .story-duo .quote {
@@ -7992,7 +9351,7 @@
     }
 
     /* Learnings */
-    .learn-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .learn-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; padding-bottom: clamp(2rem, 4vw, 3.5rem); }
     .learn-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
@@ -8015,6 +9374,182 @@
     }
 
     .page-end { height: clamp(3rem, 6vw, 5rem); }
+
+    /* Case study close — end-of-story CTA */
+    .case-close {
+      margin-top: 0;
+      padding-top: 0;
+    }
+    #learnings.section {
+      padding-bottom: 0;
+    }
+    .case-close-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      padding: clamp(3.75rem, 8vw, 6.25rem) clamp(1.75rem, 5vw, 4rem) clamp(3rem, 6vw, 4.75rem);
+      background:
+        radial-gradient(ellipse 70% 80% at 8% 100%, rgba(162, 130, 90, 0.28), transparent 58%),
+        radial-gradient(ellipse 55% 45% at 95% 0%, rgba(255, 250, 244, 0.08), transparent 50%),
+        linear-gradient(165deg, #322c26 0%, var(--dark) 45%, #211d19 100%);
+      border: 1px solid rgba(162, 130, 90, 0.28);
+      color: #faf7f2;
+      text-align: center;
+      isolation: isolate;
+      box-shadow:
+        0 28px 56px -24px rgba(26, 24, 20, 0.45),
+        0 8px 24px -12px rgba(26, 24, 20, 0.2);
+    }
+    .case-close-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      pointer-events: none;
+      box-shadow: inset 0 1px 0 rgba(255, 250, 244, 0.08);
+      z-index: 0;
+    }
+    .case-close-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      max-width: 40rem;
+      margin: 0 auto;
+    }
+    .case-close-eyebrow {
+      margin: 0;
+      font-family: var(--sans);
+      font-size: 0.9375rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      text-transform: none;
+      color: rgba(250, 247, 242, 0.55);
+    }
+    .case-close-headline {
+      position: relative;
+      margin: 0.35rem 0 0;
+      display: inline-block;
+      max-width: 100%;
+    }
+    .case-close-title {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(2.75rem, 6vw, 4.5rem);
+      font-weight: 400;
+      line-height: 1.05;
+      color: #fcfbf7;
+      letter-spacing: -0.02em;
+    }
+    .case-close-title em {
+      font-style: italic;
+      font-family: var(--serif);
+    }
+    .case-close-nudge {
+      position: absolute;
+      left: 58%;
+      bottom: calc(100% - 0.15rem);
+      display: flex;
+      align-items: flex-end;
+      gap: 0.2rem;
+      pointer-events: none;
+      transform: translateX(-18%);
+    }
+    .case-close-nudge-arrow {
+      width: 42px;
+      height: 36px;
+      color: var(--gold);
+      flex-shrink: 0;
+      transform: rotate(-8deg) translateY(4px);
+    }
+    .case-close-nudge-badge {
+      margin: 0;
+      padding: 0.35rem 0.65rem;
+      border-radius: 4px;
+      background: var(--gold);
+      color: var(--ink-deep);
+      font-family: var(--serif);
+      font-size: clamp(0.85rem, 1.2vw, 1.05rem);
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.2;
+      white-space: nowrap;
+      box-shadow: 0 6px 16px -8px rgba(0, 0, 0, 0.45);
+    }
+    .case-close-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem 1.35rem;
+      margin-top: 0.35rem;
+    }
+    .case-close-link {
+      font-family: var(--sans);
+      font-size: 1rem;
+      font-weight: 500;
+      color: rgba(250, 247, 242, 0.88);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 0.1rem;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+    .case-close-link:hover {
+      color: #fcfbf7;
+      border-bottom-color: rgba(207, 167, 100, 0.7);
+    }
+    .case-close-link.is-accent {
+      color: var(--gold);
+    }
+    .case-close-link.is-accent:hover {
+      color: #e0be7a;
+      border-bottom-color: rgba(224, 190, 122, 0.75);
+    }
+    .case-close-aside {
+      margin: 1.25rem 0 0;
+      font-family: var(--sans);
+      font-size: 0.8125rem;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      color: rgba(250, 247, 242, 0.4);
+    }
+    .case-close-aside::before {
+      content: "";
+      display: inline-block;
+      width: 1.15rem;
+      height: 2px;
+      margin-right: 0.55rem;
+      vertical-align: middle;
+      background: rgba(207, 167, 100, 0.55);
+    }
+    @media (max-width: 720px) {
+      .case-close-nudge {
+        left: 50%;
+        transform: translateX(-10%);
+      }
+      .case-close-nudge-badge {
+        white-space: normal;
+        max-width: 9.5rem;
+        text-align: left;
+      }
+    }
+    @media (max-width: 520px) {
+      .case-close-nudge {
+        position: static;
+        transform: none;
+        justify-content: center;
+        margin-bottom: 0.35rem;
+        order: -1;
+      }
+      .case-close-headline {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .case-close-nudge-arrow { display: none; }
+    }
 
     /* Certification Interpretation — Figma 848:7050 (1240×1052, absolute) */
     .cert-feature {
@@ -10589,8 +12124,8 @@
         <a href="#comparison">Comparison</a>
       </div>
       <div class="case-nav-group" role="group" aria-labelledby="navGroupDesign">
-        <p class="case-nav-group-label" id="navGroupDesign">Design</p>
-        <a href="#discovery">Designing for discovery</a>
+        <p class="case-nav-group-label" id="navGroupDesign">Solution Design</p>
+        <a href="#discovery">Designing for Discovery</a>
         <a href="#post-purchase">Designing the Post-purchase</a>
         <a href="#ai-layer">AI trust layer</a>
         <a href="#guardrails">Guardrails</a>
@@ -10616,92 +12151,278 @@
       <p class="hero-tags">Product design, Interaction design, AI-assisted design, Prototyping</p>
     </header>
 
-    <section class="hero-visual" id="heroVisual" aria-label="Total Price Breakdown product UI">
-      <span class="hero-glow" id="heroGlow" aria-hidden="true"></span>
-      <span class="hero-ring" id="heroRing" aria-hidden="true"></span>
-      <div class="hero-particles" id="heroParticles" aria-hidden="true"></div>
+        <section class="hero-visual" id="heroVisual" aria-label="Kreston trust layer product screens">
+        <span class="hero-glow" id="heroGlow" aria-hidden="true"></span>
+        <span class="hero-ring" id="heroRing" aria-hidden="true"></span>
+        <div class="hero-particles" id="heroParticles" aria-hidden="true"></div>
 
-      <div class="spark" id="heroSpark" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="none">
-          <path class="star-fill" d="M84.27,171.73l-55.09-20.3a7.92,7.92,0,0,1,0-14.86l55.09-20.3,20.3-55.09a7.92,7.92,0,0,1,14.86,0l20.3,55.09,55.09,20.3a7.92,7.92,0,0,1,0,14.86l-55.09,20.3-20.3,55.09a7.92,7.92,0,0,1-14.86,0Z"/>
-          <path class="star-stroke" d="M84.27,171.73l-55.09-20.3a7.92,7.92,0,0,1,0-14.86l55.09-20.3,20.3-55.09a7.92,7.92,0,0,1,14.86,0l20.3,55.09,55.09,20.3a7.92,7.92,0,0,1,0,14.86l-55.09,20.3-20.3,55.09a7.92,7.92,0,0,1-14.86,0Z"/>
-          <line class="ray" x1="176" y1="16" x2="176" y2="64"/>
-          <line class="ray" x1="152" y1="40" x2="200" y2="40"/>
-          <line class="ray" x1="224" y1="72" x2="224" y2="104"/>
-          <line class="ray" x1="208" y1="88" x2="240" y2="88"/>
-        </svg>
-      </div>
-
-      <article class="price-card" id="priceCard">
-        <div class="pc-head" data-reveal>
-          <div class="pc-title">
-            <span class="spark-slot" id="sparkSlot" aria-hidden="true"></span>
-            <h2>Total Price Breakdown</h2>
-          </div>
-          <span class="fair-badge"><img src="assets/check.svg" alt="" /> Fair Price</span>
+        <div class="spark" id="heroSpark" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="none">
+            <path class="star-fill" d="M84.27,171.73l-55.09-20.3a7.92,7.92,0,0,1,0-14.86l55.09-20.3,20.3-55.09a7.92,7.92,0,0,1,14.86,0l20.3,55.09,55.09,20.3a7.92,7.92,0,0,1,0,14.86l-55.09,20.3-20.3,55.09a7.92,7.92,0,0,1-14.86,0Z"/>
+            <path class="star-stroke" d="M84.27,171.73l-55.09-20.3a7.92,7.92,0,0,1,0-14.86l55.09-20.3,20.3-55.09a7.92,7.92,0,0,1,14.86,0l20.3,55.09,55.09,20.3a7.92,7.92,0,0,1,0,14.86l-55.09,20.3-20.3,55.09a7.92,7.92,0,0,1-14.86,0Z"/>
+            <line class="ray" x1="176" y1="16" x2="176" y2="64"/>
+            <line class="ray" x1="152" y1="40" x2="200" y2="40"/>
+            <line class="ray" x1="224" y1="72" x2="224" y2="104"/>
+            <line class="ray" x1="208" y1="88" x2="240" y2="88"/>
+          </svg>
         </div>
-        <div data-reveal>
-          <p class="pc-price" data-count="134690">₹1,34,690</p>
-          <p class="pc-sub">14% gold · 86% craft &amp; certification</p>
-        </div>
-        <p class="pc-where" data-reveal>Where your ₹1,34,690 goes</p>
 
-        <div class="pc-row pc-divider-row" data-reveal>
-          <div class="pc-row-top">
-            <div class="pc-row-left">
-              <span>22K gold plate</span>
-              <span class="pc-pct">14%</span>
-              <span class="fair-chip"><img src="assets/check-sm.svg" alt="" /> Fair (+0.1%)</span>
-            </div>
-            <span class="pc-amt">₹18,500</span>
+        <div class="hero-bento" id="heroBento">
+        <div class="bento-left">
+        <aside class="sat sat-proof" id="satProof" aria-label="Social proof">
+          <div class="sat-proof-row">
+            <span class="sat-proof-item"><span class="dot is-live" aria-hidden="true"></span>48 people viewing</span>
+            <span class="sat-proof-item"><span class="dot is-wish" aria-hidden="true"></span>423 wishlisted</span>
           </div>
-          <div class="bar"><span style="width:14%"></span></div>
-          <div class="pc-detail">
-            <div class="pc-detail-top">
-              <span>22K rate today: <strong>₹6,920/g</strong></span>
-              <span class="date-chip">27 Jun 2026</span>
+          <div class="sat-proof-row">
+            <span class="sat-proof-item"><img class="trend" src="assets/discovery/trend-up.svg" alt="" width="10" height="10" />190 sold this month</span>
+            <span class="sat-proof-item">Only 4 left</span>
+          </div>
+          <div class="sat-proof-divider" aria-hidden="true"></div>
+          <div class="sat-proof-press">
+            <span class="seen">AS SEEN IN</span>
+            <span class="pub">Vogue India · Nov 2025</span>
+          </div>
+        </aside>
+
+        <aside class="sat sat-trade" id="satTrade" aria-label="Trade off comparison">
+          <div class="sat-trade-head">
+            <div>
+              <h3>Trade off</h3>
+              <p class="sub">Celeste Fringe vs Mira Floral</p>
             </div>
-            <div class="pc-table">
-              <div class="pc-table-row">
-                <span class="k">Plating gold used</span>
-                <span class="v">~2.67g 22K on 48g base</span>
+            <img src="assets/comparison/tradeoff-close.svg" alt="" width="16" height="16" />
+          </div>
+          <div class="sat-trade-pair">
+            <div class="sat-trade-piece">
+              <div class="thumb"><img src="assets/comparison/tradeoff-celeste.png" alt="" width="56" height="56" /></div>
+              <p class="name">Celeste Fringe</p>
+              <p class="price">₹60,190</p>
+            </div>
+            <div class="sat-trade-piece">
+              <div class="thumb"><img src="assets/comparison/tradeoff-mira.png" alt="" width="56" height="56" /></div>
+              <p class="name">Mira Floral</p>
+              <p class="price">₹1,34,690</p>
+            </div>
+            <span class="sat-trade-vs">vs</span>
+          </div>
+          <div class="sat-trade-row">
+            <span class="lab">Price</span>
+            <span class="cel">Save ₹74,500</span>
+            <span class="mira">Craft premium</span>
+          </div>
+          <div class="sat-trade-row">
+            <span class="lab">Craft</span>
+            <span class="cel">Machine-stamped</span>
+            <span class="mira">Hand filigree</span>
+          </div>
+          <div class="sat-trade-row">
+            <span class="lab">Weight</span>
+            <span class="cel">34g</span>
+            <span class="mira">48g</span>
+          </div>
+          <div class="sat-trade-summary">
+            The lighter choker saves ₹74,500 — you trade hand filigree and IGI-backed resale for an everyday piece.
+          </div>
+        </aside>
+
+        <aside class="sat sat-emi" id="satEmi" aria-label="Pay over time EMI plans">
+          <p class="sat-emi-title">Pay over time</p>
+          <div class="sat-emi-rule" aria-hidden="true"></div>
+          <div class="sat-emi-list">
+            <div class="sat-emi-row"><span>6 mo</span><span>0%</span><span class="amt">₹22,448<small>/mo</small></span></div>
+            <div class="sat-emi-row"><span>9 mo</span><span>9.9%</span><span class="amt">₹15,589<small>/mo</small></span></div>
+            <div class="sat-emi-row"><span>12 mo</span><span>12.9%</span><span class="amt">₹12,023<small>/mo</small></span></div>
+          </div>
+          <div class="sat-emi-rule" aria-hidden="true"></div>
+          <div class="sat-emi-banks">
+            <span class="sat-emi-bank-logos" aria-label="HDFC, ICICI, Axis and SBI">
+              <img src="assets/discovery/bank-hdfc.png?v=3" alt="HDFC" width="16" height="16" />
+              <img src="assets/discovery/bank-icici.png?v=3" alt="ICICI" width="16" height="16" />
+              <img src="assets/discovery/bank-axis.png?v=3" alt="Axis" width="16" height="16" />
+              <img src="assets/discovery/bank-sbi.png?v=3" alt="SBI" width="16" height="16" />
+            </span>
+            <span class="sat-emi-banks-note">· choose at checkout</span>
+          </div>
+        </aside>
+
+        <aside class="sat sat-track" id="satTrack" aria-label="Order tracking confirmation">
+          <div class="sat-track-block">
+            <div class="sat-track-details">
+              <div class="sat-track-col">
+                <span class="sat-track-label">Courier</span>
+                <span class="sat-track-value">BlueDart Express</span>
               </div>
-              <div class="pc-table-row">
-                <span class="k">At today’s rate</span>
-                <span class="v">₹6,920 × 2.67g = <em>₹18,476</em> expected</span>
+              <div class="sat-track-col">
+                <span class="sat-track-label">Tracking ID</span>
+                <span class="sat-track-value">BD2024110987654</span>
+              </div>
+              <button class="sat-track-copy" type="button">COPY</button>
+            </div>
+          </div>
+        </aside>
+        </div>
+
+        <article class="price-card" id="priceCard">
+          <div class="pc-head" data-reveal>
+            <div class="pc-title">
+              <span class="spark-slot" id="sparkSlot" aria-hidden="true"></span>
+              <h2>Total Price Breakdown</h2>
+            </div>
+            <span class="fair-badge"><img src="assets/check.svg" alt="" /> Fair Price</span>
+          </div>
+          <div data-reveal>
+            <p class="pc-price" data-count="134690">₹1,34,690</p>
+            <p class="pc-sub">14% gold · 86% craft &amp; certification</p>
+          </div>
+          <p class="pc-where" data-reveal>Where your ₹1,34,690 goes</p>
+
+          <div class="pc-row pc-divider-row" data-reveal>
+            <div class="pc-row-top">
+              <div class="pc-row-left">
+                <span>22K gold plate</span>
+                <span class="pc-pct">14%</span>
+                <span class="fair-chip"><img src="assets/check-sm.svg" alt="" /> Fair (+0.1%)</span>
+              </div>
+              <span class="pc-amt">₹18,500</span>
+            </div>
+            <div class="bar"><span style="width:14%"></span></div>
+            <div class="pc-detail">
+              <div class="pc-detail-top">
+                <span>22K rate today: <strong>₹6,920/g</strong></span>
+                <span class="date-chip">27 Jun 2026</span>
+              </div>
+              <div class="pc-table">
+                <div class="pc-table-row">
+                  <span class="k">Plating gold used</span>
+                  <span class="v">~2.67g 22K on 48g base</span>
+                </div>
+                <div class="pc-table-row">
+                  <span class="k">At today’s rate</span>
+                  <span class="v">₹6,920 × 2.67g = <em>₹18,476</em> expected</span>
+                </div>
+              </div>
+              <p class="pc-note">48g is the brass base — only ~2.67g of 22K goes into the plate. kreston flags gold lines more than 3% above the daily index.</p>
+            </div>
+          </div>
+
+          <div class="pc-row" data-reveal>
+            <div class="pc-row-top">
+              <div class="pc-row-left"><span>Hand filigree &amp; micro beads</span><span class="pc-pct">48%</span></div>
+              <span class="pc-amt">₹64,358</span>
+            </div>
+            <div class="bar"><span style="width:48%"></span></div>
+          </div>
+          <div class="pc-row" data-reveal>
+            <div class="pc-row-top">
+              <div class="pc-row-left"><span>Craftsmanship &amp; making</span><span class="pc-pct">24%</span></div>
+              <span class="pc-amt">₹32,184</span>
+            </div>
+            <div class="bar"><span style="width:24%"></span></div>
+          </div>
+          <div class="pc-row" data-reveal>
+            <div class="pc-row-top">
+              <div class="pc-row-left"><span>GST &amp; IGI certification</span><span class="pc-pct">14%</span></div>
+              <span class="pc-amt">₹19,648</span>
+            </div>
+            <div class="bar"><span style="width:14%"></span></div>
+          </div>
+
+          <div class="pc-callout" data-reveal>
+            <strong>Hand filigree is ~₹28,000 more</strong> than machine-stamped work — the difference shows in weight, finish, and how the piece wears over years, not in a product photo.
+          </div>
+        </article>
+
+        <div class="bento-right" id="bentoRight">
+        <aside class="cert-card" id="certCard" aria-label="IGI certification metal analysis" data-node-id="990:2038">
+          <div class="cert-handle" aria-hidden="true"></div>
+          <div class="cert-body">
+            <div class="cert-head">
+              <img class="cert-spark" src="assets/hero-duo/igi-spark.svg" alt="" width="20" height="20" />
+              <div class="cert-titles">
+                <h3>This piece is IGI Certified</h3>
+                <p>Independent lab verification</p>
+              </div>
+              <img class="cert-close" src="assets/hero-duo/close.svg" alt="" width="18" height="18" />
+            </div>
+
+            <div class="cert-tabs" role="tablist">
+              <span class="tab">Report Number</span>
+              <span class="tab is-on">Metal Analysis</span>
+            </div>
+
+            <div class="metal-list">
+              <div class="metal-item">
+                <div class="top"><span class="lab">Base Metal</span><span class="val">Brass</span></div>
+                <p class="desc">Brass is the structural core. IGI confirms the base metal matches the listing</p>
+              </div>
+              <div class="metal-item">
+                <div class="top"><span class="lab">Plating</span><span class="val">22K gold</span></div>
+                <p class="desc">22K gold plate gives a warm, rich tone. The highest common grade for plated jewellery</p>
+              </div>
+              <div class="metal-item">
+                <div class="top"><span class="lab">Weight</span><span class="val">48 g</span></div>
+                <p class="desc">Total metal weight is 48g. Substantial for a choker, still comfortable for all evening wear</p>
+              </div>
+              <div class="metal-item">
+                <div class="top"><span class="lab">Finish</span><span class="val">Satin Gold</span></div>
+                <p class="desc">A satin finish diffuses light for a soft glow — less mirror-like than a high polish.</p>
               </div>
             </div>
-            <p class="pc-note">48g is the brass base — only ~2.67g of 22K goes into the plate. kreston flags gold lines more than 3% above the daily index.</p>
-          </div>
-        </div>
 
-        <div class="pc-row" data-reveal>
-          <div class="pc-row-top">
-            <div class="pc-row-left"><span>Hand filigree &amp; micro beads</span><span class="pc-pct">48%</span></div>
-            <span class="pc-amt">₹64,358</span>
-          </div>
-          <div class="bar"><span style="width:48%"></span></div>
-        </div>
-        <div class="pc-row" data-reveal>
-          <div class="pc-row-top">
-            <div class="pc-row-left"><span>Craftsmanship &amp; making</span><span class="pc-pct">24%</span></div>
-            <span class="pc-amt">₹32,184</span>
-          </div>
-          <div class="bar"><span style="width:24%"></span></div>
-        </div>
-        <div class="pc-row" data-reveal>
-          <div class="pc-row-top">
-            <div class="pc-row-left"><span>GST &amp; IGI certification</span><span class="pc-pct">14%</span></div>
-            <span class="pc-amt">₹19,648</span>
-          </div>
-          <div class="bar"><span style="width:14%"></span></div>
-        </div>
+            <div class="cert-rule" aria-hidden="true"></div>
 
-        <div class="pc-callout" data-reveal>
-          <strong>Hand filigree is ~₹28,000 more</strong> than machine-stamped work — the difference shows in weight, finish, and how the piece wears over years, not in a product photo.
+            <div class="cert-sources">
+              <p class="label">Sources</p>
+              <div class="source-row">
+                <span class="source-chip"><span class="fav">IG</span><span class="txt">IGI Certificate #SS-4821</span></span>
+                <span class="source-chip"><span class="fav">KR</span><span class="txt">Kreston Registry</span></span>
+                <span class="source-chip"><span class="fav">AA</span><span class="txt">Aaranyaa Workshop</span></span>
+                <span class="source-chip"><span class="fav">GR</span><span class="txt">Gold Rate API</span></span>
+              </div>
+            </div>
+
+            <button class="cert-ask" type="button">
+              <img src="assets/hero-duo/ask-chat.svg" alt="" width="14" height="14" />
+              Have any questions? Ask our AI
+            </button>
+          </div>
+        </aside>
+
+        <aside class="sat sat-chat" id="satChat" aria-label="Hybrid chat">
+          <div class="sat-chat-product">
+            <img src="assets/ai-layer/pdp/hero.jpg" alt="" width="36" height="36" />
+            <div>
+              <h4>Mira Floral Choker</h4>
+              <p>Aaranyaa Jewels · ₹1,34,690</p>
+            </div>
+          </div>
+          <div class="sat-chat-thread">
+            <div class="sat-chat-bubble">
+              <span class="av">K</span>
+              <p class="msg">I can help with styling, resale, IGI, and care for this piece.</p>
+            </div>
+            <div class="sat-chat-bubble is-user">
+              <span class="av">You</span>
+              <p class="msg">What’s the resale outlook on Mira?</p>
+            </div>
+            <div class="sat-chat-bubble">
+              <span class="av">K</span>
+              <p class="msg">IGI-backed hand filigree typically resells at ~55–65% of paid, tied to gold rate and condition.</p>
+            </div>
+          </div>
+          <div class="sat-chat-pills">
+            <span>Resale value?</span>
+            <span>Price breakdown</span>
+            <span>Care tips</span>
+          </div>
+          <div class="sat-chat-expert">
+            <img src="assets/ai-layer/hybrid/icon-expert.svg" alt="" width="14" height="14" />
+            Talk to an expert
+          </div>
+        </aside>
         </div>
-      </article>
-    </section>
+      </section>
     </div>
 
     <!-- OVERVIEW -->
@@ -10711,11 +12432,11 @@
           <p class="eyebrow">Overview</p>
           <h2 class="display">Bridging the Gap Between <em>Luxury Jewellery</em> and <em>Online Trust</em></h2>
         </div>
-        <p class="lead">A 4-week design sprint exploring how a digital-only jewellery platform can make gold, silver, platinum, and diamond purchases online feel as safe as walking into a store.</p>
+        <p class="lead">A 4-week design sprint exploring how a digital-only jewellery platform can make buying gold, silver, platinum, and diamonds jewellery online feel as trustworthy as buying them in-store.</p>
         <div class="bullets">
-          <div class="bullet"><span class="dot"></span><p class="lead">AI-assisted trust signals surfaced early in the funnel</p></div>
-          <div class="bullet"><span class="dot"></span><p class="lead">Certification and pricing transparency made high price points feel manageable</p></div>
-          <div class="bullet"><span class="dot"></span><p class="lead">Human escalation built in for moments of low confidence</p></div>
+          <div class="bullet"><span class="dot"></span><p class="lead">Trust signals appear early, before buyers have to go looking for them.</p></div>
+          <div class="bullet"><span class="dot"></span><p class="lead">Live gold rates and metal analysis to make ₹1L+ purchases easier to understand.</p></div>
+          <div class="bullet"><span class="dot"></span><p class="lead">Human support steps in when buyers need more reassurance.</p></div>
         </div>
         <div class="role-card">
           <p class="eyebrow">My Role</p>
@@ -10735,61 +12456,61 @@
           <div class="about-col">
             <div>
               <p class="col-label">What is Kreston</p>
-              <p class="col-title">Where India's artisan jewellery<br>finally finds its buyer.</p>
-              <p class="lead">Connecting urban Indian buyers with independent artisans - handcrafted gold, diamond, and silver pieces rarely found in mainstream retail.</p>
+              <p class="col-title">Where India’s local artisan jewellery finds a wider audience.</p>
+              <p class="lead">Kreston connects urban buyers with independent artisans creating handcrafted gold, diamond, and silver jewellery rarely found in mainstream stores.</p>
             </div>
           </div>
           <div class="about-col">
             <div>
               <p class="col-label">The opportunity</p>
               <p class="col-title">1000+ artisans.<br />Zero national reach.</p>
-              <p class="lead">Giving buyers access to one-of-a-kind pieces with a story behind every design, moving locally trusted talent into a national spotlight.</p>
+              <p class="lead">These artisans are already trusted by local buyers, but their work rarely reaches a national audience. Kreston makes it easier to discover their craft, stories, and one-of-a-kind pieces online.</p>
             </div>
           </div>
           <div class="about-col">
             <div>
               <p class="col-label">The trust challenge</p>
               <p class="col-title">Who made this? Is it real?<br />Can I trust the price?</p>
-              <p class="lead">Because Kreston works with independents, customers question purity and certification. That anxiety is the core design problem.</p>
+              <p class="lead">Because Kreston is digital-only, trust badges aren’t enough. The challenge was to make authenticity, certification, and pricing clear before purchase.</p>
             </div>
           </div>
         </div>
         </div>
         <div class="gaps-block" id="problem">
           <div class="overview-sub-head stack-16">
-            <p class="eyebrow soft">Gaps that are still uncovered</p>
+            <p class="eyebrow">Problem</p>
             <h3 class="title">Where trust breaks down</h3>
           </div>
           <div class="gap-grid">
           <article class="gap-card">
-            <p class="g-label">Certifications buyers can't read</p>
+            <p class="g-label">Certifications buyers can’t understand</p>
             <h3>Certified. Yet Still confusing.</h3>
-            <hr /><p class="lead">BIS, GIA, and hallmark badges shown - but buyers have no idea what any of them mean.</p>
+            <hr /><p class="lead">BIS, IGI, and star ratings appear everywhere, but buyers still don’t know what they actually guarantee.</p>
           </article>
           <article class="gap-card">
             <p class="g-label">No way to verify the artisan</p>
             <h3>No name. No story. No proof.</h3>
-            <hr /><p class="lead">Every piece is handcrafted - but the maker is invisible. No profile, no background, no trust signal.</p>
+            <hr /><p class="lead">Each piece is handcrafted, yet the person behind it remains invisible. There’s no profile, background, or proof of their craft.</p>
           </article>
           <article class="gap-card">
             <p class="g-label">Pricing feels arbitrary</p>
             <h3>A price. No breakdown. No reason.</h3>
-            <hr /><p class="lead">A ₹24,000 pendant with no breakdown. Buyers can't tell if it's fair - or just inflated.</p>
+            <hr /><p class="lead">A ₹1,34,690 choker appears without a clear breakdown, leaving buyers unsure whether the price is fair.</p>
           </article>
           <article class="gap-card">
-            <p class="g-label">Metal purity is unverifiable</p>
+            <p class="g-label">Metal purity is hard to verify</p>
             <h3>Claimed, never proven</h3>
-            <hr /><p class="lead">Purity is claimed, not proven. Buyers accept the label without any way to verify it independently.</p>
+            <hr /><p class="lead">Buyers are told the metal is pure but have no simple way to verify that claim themselves.</p>
           </article>
           <article class="gap-card">
-            <p class="g-label">Returns feel risky on high-value items</p>
+            <p class="g-label">Returns feel risky</p>
             <h3>Confidence ends at checkout</h3>
-            <hr /><p class="lead">Returning a ₹50,000 piece feels uncertain. Policies exist - but confidence in the process doesn't.</p>
+            <hr /><p class="lead">Returning a ₹1,34,690 piece feels uncertain. The policy exists, but buyers don’t know what the process will actually look like.</p>
           </article>
           <article class="gap-card">
-            <p class="g-label">Post-purchase support is absent</p>
+            <p class="g-label">Post-purchase support is missing</p>
             <h3>Support stops at the receipt</h3>
-            <hr /><p class="lead">After checkout, buyers are on their own. No care guide, no resizing help, no expert follow-up - the relationship ends the moment payment clears.</p>
+            <hr /><p class="lead">Once the payment goes through, buyers are left on their own, with no care guidance, resizing help, or expert follow-up.</p>
           </article>
         </div>
         </div>
@@ -10803,8 +12524,8 @@
       <div class="comparison-inner">
         <header class="comparison-head">
           <p class="eyebrow">The Comparison</p>
-          <h2 class="display">When the jewellery costs lakhs,<br>trust is the product.</h2>
-          <p class="lead">One app built for browsing. One built for believing.</p>
+          <h2 class="display">When jewellery costs lakhs,<br>trust matters as much as the product.</h2>
+          <p class="lead">One platform helps people browse. The other gives them the confidence to buy.</p>
         </header>
       </div>
 
@@ -10817,7 +12538,7 @@
             </div>
             <div class="phone-shell has-frames" aria-label="Generic jewellery listing">
               <div class="frame-screen is-on" data-frame="0">
-              <div class="phone-scroll">
+                <div class="phone-scroll">
                 <div class="g-statusbar">
                   <span class="time">9:41</span>
                   <span class="icons">
@@ -10960,70 +12681,70 @@
           <!-- Center callout -->
           <div class="compare-callout-stack" id="compareCalloutStack" aria-live="polite">
           <aside class="compare-callout is-on" data-frame="0">
-            <p class="label">Hybrid Chat</p>
-            <h2 class="title">Help that starts on this piece</h2>
+            <p class="label">Price Transparency</p>
+            <h2 class="title">Price Confidence &amp; Transparency</h2>
             <div class="compare-vs">
               <div class="compare-side">
                 <p class="who">Generic App</p>
-                <p class="claim">A receipt. Not a conversation.</p>
-                <p class="lead">Price breakup sits alone — no way to ask if any line is fair, or what the craft premium means.</p>
+                <p class="claim">Shows the cost, but not the reason behind it.</p>
+                <p class="lead">Buyers see the gold rate, making charges, and GST, but still can’t tell whether the price is fair.</p>
               </div>
               <p class="compare-divider" aria-hidden="true">vs</p>
               <div class="compare-side is-win">
                 <p class="who">Kreston</p>
-                <p class="claim">Piece-aware AI, expert on tap.</p>
-                <p class="lead">Opens on this choker — styling, resale, IGI, care — with a path to a human who already has the piece in view.</p>
+                <p class="claim">Designed to explain where every rupee goes.</p>
+                <p class="lead">Live gold rate, craftsmanship cost, and certification fee, then compares the total against the day’s market rate.</p>
               </div>
             </div>
           </aside>
           <aside class="compare-callout" data-frame="1">
             <p class="label">Certification &amp; Trust</p>
-            <h2 class="title">Proof you can actually verify</h2>
+            <h2 class="title">Proof buyers can understand and verify</h2>
             <div class="compare-vs">
               <div class="compare-side">
                 <p class="who">Generic App</p>
-                <p class="claim">A wall of badges.</p>
-                <p class="lead">BIS hallmark, star ratings and review counts — but never what any mark actually guarantees.</p>
+                <p class="claim">Badges without context.</p>
+                <p class="lead">BIS hallmarks, ratings, and reviews are visible, but buyers are left to figure out what they actually guarantee.</p>
               </div>
               <p class="compare-divider" aria-hidden="true">vs</p>
               <div class="compare-side is-win">
                 <p class="who">Kreston</p>
-                <p class="claim">IGI, in plain language.</p>
-                <p class="lead">Independent lab verification — base metal, plating, weight and finish explained line by line.</p>
+                <p class="claim">Designed to make certification understandable.</p>
+                <p class="lead">IGI verification is explained in plain language, covering the metal, plating, weight, and finish.</p>
               </div>
             </div>
           </aside>
           <aside class="compare-callout" data-frame="2">
             <p class="label">Cross-sell &amp; Comparison</p>
-            <h2 class="title">Trade-offs you can actually weigh</h2>
+            <h2 class="title">Helping buyers make a more informed choice</h2>
             <div class="compare-vs">
               <div class="compare-side">
                 <p class="who">Generic App</p>
-                <p class="claim">You may also like.</p>
-                <p class="lead">Generic tiles with a name and a price — no reason to choose one piece over another.</p>
+                <p class="claim">“you may also like”</p>
+                <p class="lead">Similar pieces are shown with just a name and price, making it difficult to understand which one offers better value.</p>
               </div>
               <p class="compare-divider" aria-hidden="true">vs</p>
               <div class="compare-side is-win">
                 <p class="who">Kreston</p>
-                <p class="claim">See the trade-off.</p>
-                <p class="lead">Compares the chosen piece against an alternative on price, technique, and weight — so the savings and the craft premium both make sense.</p>
+                <p class="claim">Designed to make trade-offs clear</p>
+                <p class="lead">Pieces are compared by price, technique, and weight, helping buyers understand where they can save and when the craftsmanship is worth paying more for.</p>
               </div>
             </div>
           </aside>
           <aside class="compare-callout" data-frame="3">
             <p class="label">Support Access</p>
-            <h2 class="title">Help that knows the piece</h2>
+            <h2 class="title">Human help when the decision feels bigger</h2>
             <div class="compare-vs">
               <div class="compare-side">
                 <p class="who">Generic App</p>
-                <p class="claim">A chatbot. Not a jeweller.</p>
-                <p class="lead">Opens a generic menu — Track Order, Offers, Gifting — with no idea which piece you’re looking at.</p>
+                <p class="claim">A chatbot without context.</p>
+                <p class="lead">Buyers get a generic menu of options, regardless of the jewellery they are viewing or the question they asked.</p>
               </div>
               <p class="compare-divider" aria-hidden="true">vs</p>
               <div class="compare-side is-win">
                 <p class="who">Kreston</p>
-                <p class="claim">Context first. Expert when needed.</p>
-                <p class="lead">Starts on this choker — styling, resale, IGI, care — then escalates to a human who already has the piece in view.</p>
+                <p class="claim">Same thread. Human when needed.</p>
+                <p class="lead">With one tap, buyers can speak to a jewellery expert who can already see the piece and their conversation history.</p>
               </div>
             </div>
           </aside>
@@ -11039,58 +12760,95 @@
             </div>
             <div class="phone-shell phone-shell--kreston has-frames" aria-label="Kreston product page with trust breakdown">
               <div class="frame-screen is-on" data-frame="0">
-                <div class="phone-scroll k-compare-hybrid hybrid-chat-demo-phone" aria-label="Hybrid chat on Mira Floral Choker" data-node-id="612:1905">
-                  <nav class="hybrid-chat-demo-nav" aria-hidden="true">
-                    <span class="hybrid-chat-demo-nav-btn is-back"><img src="assets/ai-layer/hybrid/icon-back.svg" alt="" width="24" height="24" /></span>
-                    <img class="hybrid-chat-demo-logo" src="assets/ai-layer/hybrid/logo.png" alt="Kreston" width="99" height="34" />
-                    <span class="hybrid-chat-demo-nav-btn is-cart"><img src="assets/ai-layer/hybrid/icon-cart.svg" alt="" width="40" height="40" /></span>
-                  </nav>
-                  <div class="hybrid-chat-demo-hero" aria-hidden="true">
-                    <img src="assets/ai-layer/pdp/hero.jpg" alt="" width="353" height="411" />
-                  </div>
-                  <div class="hybrid-chat-demo-dim" aria-hidden="true"></div>
-                  <div class="hybrid-chat-demo-sheet">
-                    <header class="hybrid-chat-demo-sheet-head">
-                      <div class="hybrid-chat-demo-product">
-                        <img src="assets/ai-layer/pdp/hero.jpg" alt="" width="44" height="44" />
-                        <div class="hybrid-chat-demo-product-copy">
-                          <h4>Mira Floral Choker</h4>
-                          <p>Aaranyaa Jewels · ₹ 1,34,690</p>
+                <div class="phone-scroll k-price" aria-label="Total price breakdown" data-node-id="1027:1820">
+                  <div class="k-price-body">
+                    <article class="price-card k-phone-card" aria-label="Total price breakdown">
+                      <div class="pc-head">
+                        <div class="pc-title">
+                          <h2>Total Price Breakdown</h2>
                         </div>
+                        <span class="fair-badge"><img src="assets/comparison/k-fair-check.svg" alt="" width="14" height="14" /> Fair Price</span>
                       </div>
-                      <button class="hybrid-chat-demo-close" type="button" aria-label="Close chat" tabindex="-1">
-                        <img src="assets/ai-layer/hybrid/icon-close.svg" alt="" width="20" height="20" />
-                      </button>
-                    </header>
-                    <div class="hybrid-chat-demo-messages-wrap">
-                      <div class="hybrid-chat-demo-messages">
-                        <div class="hybrid-chat-demo-ai-status" data-status="ai" aria-label="Currently chatting with Kreston AI">
-                          <img src="assets/ai-layer/tracking/icon-spark.svg" alt="" width="12" height="12" />
-                          <span>Kreston AI</span>
-                          <span class="sub">· Assistant · 24/7</span>
-                        </div>
-                        <div class="hybrid-chat-demo-bubble-row is-ai">
-                          <span class="hybrid-chat-demo-avatar is-ai" aria-hidden="true">K</span>
-                          <div class="hybrid-chat-demo-bubble-wrap">
-                            <p class="hybrid-chat-demo-sender is-ai">Kreston AI</p>
-                            <p class="hybrid-chat-demo-bubble">Hi — I can help with anything about the <strong>Mira Floral Choker</strong>: styling, fit, care, price breakdown, investment &amp; resale, IGI certification, materials, and similar pieces.</p>
+                      <div>
+                        <p class="pc-price">₹1,34,690</p>
+                        <p class="pc-sub">14% gold · 86% craft &amp; certification</p>
+                      </div>
+                      <p class="pc-where">Where your ₹1,34,690 goes</p>
+
+                      <div class="pc-row pc-divider-row">
+                        <div class="pc-row-top">
+                          <div class="pc-row-left">
+                            <span>22K gold plate</span>
+                            <span class="pc-pct">14%</span>
+                            <span class="fair-chip"><img src="assets/comparison/k-fair-check-sm.svg" alt="" width="12" height="12" /> Fair (+0.1%)</span>
                           </div>
+                          <span class="pc-amt">₹18,500</span>
+                        </div>
+                        <div class="bar"><span style="width:14%"></span></div>
+                        <div class="pc-detail">
+                          <div class="pc-detail-top">
+                            <span>22K rate today: <strong>₹6,920/g</strong></span>
+                            <span class="date-chip">27 Jun 2026</span>
+                          </div>
+                          <div class="pc-table">
+                            <div class="pc-table-row">
+                              <span class="k">Plating gold used</span>
+                              <span class="v">~2.67g 22K on 48g base</span>
+                            </div>
+                            <div class="pc-table-row">
+                              <span class="k">At today’s rate</span>
+                              <span class="v">₹6,920 × 2.67g = <em>₹18,476</em> expected</span>
+                            </div>
+                          </div>
+                          <p class="pc-note">48g is the brass base — only ~2.67g of 22K goes into the plate. kreston flags gold lines more than 3% above the daily index.</p>
                         </div>
                       </div>
+
+                      <div class="pc-row">
+                        <div class="pc-row-top">
+                          <div class="pc-row-left"><span>Hand filigree &amp; micro beads</span><span class="pc-pct">48%</span></div>
+                          <span class="pc-amt">₹64,358</span>
+                        </div>
+                        <div class="bar"><span style="width:48%"></span></div>
+                      </div>
+                      <div class="pc-row">
+                        <div class="pc-row-top">
+                          <div class="pc-row-left"><span>Craftsmanship &amp; making</span><span class="pc-pct">24%</span></div>
+                          <span class="pc-amt">₹32,184</span>
+                        </div>
+                        <div class="bar"><span style="width:24%"></span></div>
+                      </div>
+                      <div class="pc-row">
+                        <div class="pc-row-top">
+                          <div class="pc-row-left"><span>GST &amp; IGI certification</span><span class="pc-pct">14%</span></div>
+                          <span class="pc-amt">₹19,648</span>
+                        </div>
+                        <div class="bar"><span style="width:14%"></span></div>
+                      </div>
+
+                      <div class="pc-callout">
+                        <strong>Hand filigree is ~₹28,000 more</strong> than machine-stamped work — the difference shows in weight, finish, and how the piece wears over years, not in a product photo.
+                      </div>
+                    </article>
+                  </div>
+
+                  <div class="k-ask">
+                    <div class="k-ask-copy">
+                      <span class="q">Have questions?</span>
+                      <span class="cta">Ask right away</span>
                     </div>
-                    <div class="hybrid-chat-demo-pills" aria-label="Suggested questions">
-                      <span>How to style it?</span>
-                      <span>Resale value?</span>
-                      <span>Price breakdown</span>
-                      <span>Care &amp; storage</span>
-                    </div>
-                    <button type="button" class="hybrid-chat-demo-expert" tabindex="-1">
-                      <img src="assets/ai-layer/hybrid/icon-expert.svg" alt="" width="18" height="18" />
-                      <span class="label">Talk to an expert</span>
-                    </button>
-                    <div class="hybrid-chat-demo-input-row">
-                      <div class="hybrid-chat-demo-input">Ask about this piece…</div>
-                      <span class="hybrid-chat-demo-send"><img src="assets/ai-layer/hybrid/icon-send.svg" alt="" width="18" height="18" /></span>
+                    <span class="k-ask-icon">
+                      <img src="assets/comparison/ask-chat.svg" alt="" width="22" height="22" />
+                    </span>
+                  </div>
+
+                  <div class="phone-sticky">
+                    <div class="k-ctas k-ctas--figma">
+                      <button class="cart" type="button">
+                        <img src="assets/comparison/cart.svg" alt="" width="16" height="16" />
+                        Add To Cart
+                      </button>
+                      <button class="buy" type="button">Buy now</button>
                     </div>
                   </div>
                 </div>
@@ -11150,7 +12908,7 @@
                 </div>
               </div>
               <div class="frame-screen" data-frame="2">
-                <div class="phone-scroll k-tradeoff">
+                <div class="phone-scroll k-tradeoff" aria-label="Trade off comparison" data-node-id="764:10510">
                   <div class="k-tradeoff-bg" aria-hidden="true">
                     <div class="k-gst-tail">
                       <div class="row">
@@ -11216,7 +12974,7 @@
                     </div>
                     </div>
                     <div class="k-to-summary">
-                      <p>Celeste saves ₹74,500 today — you trade hand filigree, heavier presence, and IGI-backed resale for a lighter, everyday choker.</p>
+                      <p>The lighter choker saves ₹74,500 — you trade hand filigree, heavier presence, and IGI-backed resale for an everyday piece.</p>
                     </div>
                     <button class="k-to-ask" type="button">
                       <img src="assets/comparison/tradeoff-chat.svg" alt="" width="19" height="19" />
@@ -11295,10 +13053,10 @@
         <div class="disc-cards" aria-label="Discovery stage feature solutions">
           <article class="disc-card">
             <header class="disc-card-head">
-              <h4>Social Proof Strip</h4>
+              <h4>Social Proof</h4>
               <span class="rule" aria-hidden="true"></span>
               <p class="friction-label">User Friction</p>
-              <p class="friction">Users leave to find third-party social proof - product details feel biased.</p>
+              <p class="friction">Product information can feel one-sided, so buyers leave the platform to look for independent reviews and reassurance.</p>
             </header>
             <div class="disc-card-stage">
               <div class="disc-proof" aria-label="Social proof UI">
@@ -11319,10 +13077,7 @@
             </div>
             <footer class="disc-card-foot">
               <p class="sol-label">Design Solution</p>
-              <ul>
-                <li class="lead">Live activity counts replace external search</li>
-                <li class="lead">Press mention adds credibility</li>
-              </ul>
+              <p class="lead">Verified reviews and external trust signals are surfaced within the experience, helping buyers feel confident without leaving the page.</p>
             </footer>
           </article>
 
@@ -11331,7 +13086,7 @@
               <h4>Pay Over Time</h4>
               <span class="rule" aria-hidden="true"></span>
               <p class="friction-label">User Friction</p>
-              <p class="friction">1.3L lump sum = drop-off</p>
+              <p class="friction">A ₹1.3 lakh upfront payment can make buyers hesitate or abandon the purchase.</p>
             </header>
             <div class="disc-card-stage">
               <div class="disc-emi" aria-label="Pay over time EMI plans">
@@ -11356,10 +13111,7 @@
             </div>
             <footer class="disc-card-foot">
               <p class="sol-label">Design Solution</p>
-              <ul>
-                <li class="lead">EMI options reframe price as monthly budget</li>
-                <li class="lead">Bank logos signal trust at checkout</li>
-              </ul>
+              <p class="lead">On the product page, EMI options turn the full price into manageable monthly payments, while familiar bank logos make the payment options feel more trustworthy.</p>
             </footer>
           </article>
         </div>
@@ -11369,7 +13121,7 @@
           <div class="cert-feature-scaler">
             <div class="cert-feature-canvas">
               <header class="cert-feature-head">
-                <p class="eyebrow">Main Feature</p>
+                <p class="eyebrow">Key Design Intervention</p>
                 <h4>Certification Interpretation</h4>
               </header>
 
@@ -11386,7 +13138,7 @@
                 <div class="story-duo">
                   <div class="side is-friction">
                     <p class="label">User Friction</p>
-                    <p class="quote">Buyers doubt authenticity — no way to verify claims on-page.</p>
+                    <p class="quote">Buyers question authenticity because they can’t verify the seller’s claims on the product page.</p>
                   </div>
                   <div class="side is-solution">
                     <p class="label">Design Solution</p>
@@ -11450,14 +13202,14 @@
 
                 <div class="cert-sheet" hidden aria-hidden="true">
                   <button type="button" class="cert-sheet-scrim" aria-label="Close certification details"></button>
-                  <div class="cert-sheet-panel" role="dialog" aria-modal="true" aria-label="Verified with IGI Jewelry Report">
+                  <div class="cert-sheet-panel" role="dialog" aria-modal="true" aria-label="Verified with IGI Jewellery Report">
                     <div class="cert-sheet-handle" aria-hidden="true"><span></span></div>
                     <div class="cert-sheet-head">
                       <div class="cert-sheet-badge" aria-hidden="true">
                         <img src="assets/discovery/cert-sheet-check.svg" alt="" width="16" height="16" />
                       </div>
                       <div class="cert-sheet-titles">
-                        <p class="cert-sheet-title" data-for="report">Verified with IGI Jewelry Report</p>
+                        <p class="cert-sheet-title" data-for="report">Verified with IGI Jewellery Report</p>
                         <p class="cert-sheet-title" data-for="metal">This piece is IGI Certified</p>
                         <p class="cert-sheet-sub">Independent lab verification</p>
                       </div>
@@ -11601,7 +13353,7 @@
               <aside class="sheet-annot is-card" aria-label="Certificate number annotation">
                 <div class="sheet-annot-body">
                   <p class="label">Proof on hand</p>
-                  <p class="copy">Certificate number is copyable — buyers can verify independently, not just trust the listing.</p>
+                  <p class="copy">The certificate number is easy to copy, so buyers can verify it independently instead of relying only on the seller’s claims.</p>
                 </div>
                 <span class="sheet-annot-line" aria-hidden="true"></span>
               </aside>
@@ -11615,7 +13367,7 @@
               <aside class="sheet-annot is-metal" aria-label="Metal analysis annotation">
                 <div class="sheet-annot-body">
                   <p class="label">Decoded for buyers</p>
-                  <p class="copy">Lab specs become plain language — what the metal is, why it matters, no jargon left opaque.</p>
+                  <p class="copy">Metal specifications and other technical details are explained in plain language, helping buyers understand what they mean and why they matter.</p>
                 </div>
                 <span class="sheet-annot-line" aria-hidden="true"></span>
               </aside>
@@ -11649,22 +13401,22 @@
         <footer class="cert-feature-foot">
           <div class="col">
             <p class="label">About the feature</p>
-            <p class="copy">Turns opaque lab marks into plain language so buyers can verify authenticity without leaving the page.</p>
+            <p class="copy">Explains certification details in plain language, so buyers can verify authenticity on the product page.</p>
           </div>
           <div class="col">
             <p class="label">How it helps</p>
-            <p class="copy">Third-party IGI proof replaces seller claims — certificate number, metal, and finish decoded in context.</p>
+            <p class="copy">Third-party proof from authorities like IGI confirms the certificate, metal, and finish beyond the seller’s claims.</p>
           </div>
           <div class="col">
             <p class="label">Trade offs</p>
-            <p class="copy">Adds a step before checkout; worth it when a high-value purchase needs proof, not just a badge.</p>
+            <p class="copy">Adds cognitive load and can make discovery feel more complex, but provides valuable reassurance for a high-value purchase.</p>
           </div>
         </footer>
       </div>
     </section>
 
     <blockquote class="pull">
-      “I didn't just add AI - I built a trust layer that <em>makes high price points feel manageable</em> the moment you land on the product page.”
+      I didn’t just add AI. I designed a trust layer that <em>explains the price directly on the product page</em>, before buyers need to open a chat, contact support, or look elsewhere.
     </blockquote>
 
     <section class="visual-section wrap stack-32">
@@ -11675,7 +13427,7 @@
               <h4>Seller Story</h4>
               <span class="rule" aria-hidden="true"></span>
               <p class="friction-label">User Friction</p>
-              <p class="friction">Seller feels anonymous — no human connection</p>
+              <p class="friction">The artisan feels anonymous, making it harder for buyers to connect with or trust the person behind the piece.</p>
             </header>
             <div class="disc-card-stage disc-card-stage--tall">
               <div class="seller-story" aria-label="Aaranyaa Jewels artisan profile">
@@ -11712,10 +13464,7 @@
             </div>
             <footer class="disc-card-foot">
               <p class="sol-label">Design Solution</p>
-              <ul>
-                <li>Artisan profile with origin and craft heritage</li>
-                <li>Provenance details build trust and emotional value</li>
-              </ul>
+              <p class="lead">The artisan’s profile adds context about the maker, craft, and value behind each piece.</p>
             </footer>
           </article>
 
@@ -11724,7 +13473,7 @@
               <h4>Total Price Breakdown</h4>
               <span class="rule" aria-hidden="true"></span>
               <p class="friction-label">User Friction</p>
-              <p class="friction">Buyers distrust jewelry pricing — hidden markups erode confidence</p>
+              <p class="friction">When buyers can’t see how the final price is calculated, hidden markups make it difficult to know whether the piece is fairly priced.</p>
             </header>
             <div class="disc-card-stage disc-card-stage--price">
               <article class="price-card" aria-label="Total price breakdown">
@@ -11798,10 +13547,7 @@
             </div>
             <footer class="disc-card-foot">
               <p class="sol-label">Design Solution</p>
-              <ul>
-                <li>Transparent cost split (gold, craft, GST) justifies the total</li>
-                <li>Live gold rate + fair price badge builds pricing credibility</li>
-              </ul>
+              <p class="lead">A clear cost breakdown, live gold rate, and Fair Price badge help buyers understand and trust the price.</p>
             </footer>
           </article>
         </div>
@@ -11811,7 +13557,6 @@
           <div class="to-feature-scaler">
             <div class="to-feature-canvas">
               <header class="to-feature-head">
-                <p class="eyebrow">Main Feature</p>
                 <h4>Trade Off</h4>
               </header>
 
@@ -11828,13 +13573,13 @@
                 <div class="story-duo">
                   <div class="side is-friction">
                     <p class="label">User Friction</p>
-                    <p class="quote for-idle">Similar pieces look interchangeable — buyers can't tell what they're trading away.</p>
-                    <p class="quote for-open">A ₹74,500 gap reads as a discount — not as craft, weight, certification, and resale traded away.</p>
+                    <p class="quote for-idle">Similar pieces can feel interchangeable, making it hard for buyers to understand why one costs more.</p>
+                    <p class="quote for-open">A ₹74,500 gap looks like a discount, hiding the trade-offs behind it.</p>
                   </div>
                   <div class="side is-solution">
                     <p class="label">Design Solution</p>
-                    <p class="copy for-idle">Side-by-side comparison on price, technique, and weight — with an AI summary that makes the savings vs craft trade-off legible</p>
-                    <p class="copy for-open">Attribute rows plus an AI summary name what Celeste saves and what Mira keeps — so the trade-off is decideable, not guessed.</p>
+                    <p class="copy for-idle">Side-by-side details make the trade-offs and craft premium clear without pushing a sale.</p>
+                    <p class="copy for-open">Comparison rows and an AI summary clarify what buyers gain or give up without ranking sellers.</p>
                   </div>
                 </div>
                 <span class="to-annot-line" aria-hidden="true"></span>
@@ -12018,7 +13763,7 @@
                   </div>
                   </div>
                   <div class="k-to-summary">
-                    <p>Celeste saves ₹74,500 today — you trade hand filigree, heavier presence, and IGI-backed resale for a lighter, everyday choker.</p>
+                    <p>The lighter choker saves ₹74,500 — you trade hand filigree, heavier presence, and IGI-backed resale for an everyday piece.</p>
                   </div>
                   <button class="k-to-ask" type="button">
                     <img src="assets/comparison/tradeoff-chat.svg" alt="" width="19" height="19" />
@@ -12049,15 +13794,15 @@
         <footer class="to-feature-foot">
           <div class="col">
             <p class="label">About the feature</p>
-            <p class="copy">Increased purchase confidence early in the funnel by making high price points feel manageable immediately.</p>
+            <p class="copy">Compares similar pieces using verified details like price, craft, weight, and certification, while keeping the AI neutral and informative.</p>
           </div>
           <div class="col">
             <p class="label">How it helps</p>
-            <p class="copy">Increased purchase confidence early in the funnel by making high price points feel manageable immediately.</p>
+            <p class="copy">Buyers can see what they save and what they may give up, without ranking sellers or pushing one piece over another.</p>
           </div>
           <div class="col">
             <p class="label">Trade offs</p>
-            <p class="copy">Increased purchase confidence early in the funnel by making high price points feel manageable immediately.</p>
+            <p class="copy">Comparisons can introduce bias. The way to avoid it is for the AI to stay focused on product details and remains neutral.</p>
           </div>
         </footer>
       </div>
@@ -12070,15 +13815,15 @@
         <h2 class="display">Designing trust that lasts beyond checkout</h2>
       </div>
       <blockquote class="pull" data-node-id="912:3124">
-        “The moment after payment is the most anxious moment in the entire journey — that's <em>exactly when trust design matters</em> most.”
+        The moment after payment is often the most anxious and the most overlooked. That’s <em>when thoughtful trust design matters</em> most.
       </blockquote>
       <div class="fig-block">
         <div class="disc-cards pp-cards" aria-label="Post-purchase feature solutions" data-node-id="912:2900">
           <article class="disc-card" data-node-id="912:2901">
             <header class="disc-card-head">
-              <h4>Tracking Details at Checkout</h4>
+              <h4>Tracking from checkout</h4>
               <span class="rule" aria-hidden="true"></span>
-              <p class="friction">Real-time tracking at order confirmation reassures buyers</p>
+              <p class="friction">After paying, buyers want immediate proof that their order is moving.</p>
             </header>
             <div class="disc-card-stage disc-card-stage--tracking">
               <div class="pp-tracking" aria-label="Order tracking confirmation">
@@ -12106,17 +13851,15 @@
             </div>
             <footer class="disc-card-foot">
               <p class="sol-label">Design Solution</p>
-              <ul>
-                <li>Tracking ID and courier shared right after order confirmation</li>
-              </ul>
+              <p class="lead">Tracking and courier details appear immediately after confirmation, reducing uncertainty.</p>
             </footer>
           </article>
 
           <article class="disc-card" data-node-id="912:2937">
             <header class="disc-card-head">
-              <h4>End-to-End Proof of Journey</h4>
+              <h4>Proof throughout the journey</h4>
               <span class="rule" aria-hidden="true"></span>
-              <p class="friction">A verified timeline from inspection to doorstep</p>
+              <p class="friction">For a high-value order, a simple “shipped” status doesn’t offer enough reassurance.</p>
             </header>
             <div class="disc-card-stage disc-card-stage--timeline">
               <div class="pp-timeline" aria-label="Order journey timeline">
@@ -12163,7 +13906,7 @@
                     <div class="pp-step-body">
                       <div class="pp-step-copy">
                         <p class="pp-step-title">Verifying Certificates</p>
-                        <p class="pp-step-desc">GIA #2336787 · IGI #458921<br />Currently cross-checking</p>
+                        <p class="pp-step-desc">Mira: IGI #458921 · Ring: GIA #2336787<br />Currently cross-checking lab records</p>
                       </div>
                     </div>
                   </div>
@@ -12174,7 +13917,7 @@
                     <div class="pp-step-body">
                       <div class="pp-step-copy">
                         <p class="pp-step-title">Hallmark &amp; vault check to be done</p>
-                        <p class="pp-step-desc">BIS hallmark · kreston AI authenticity</p>
+                        <p class="pp-step-desc">Hallmark + lab check against vault records</p>
                       </div>
                     </div>
                   </div>
@@ -12183,9 +13926,7 @@
             </div>
             <footer class="disc-card-foot">
               <p class="sol-label">Design Solution</p>
-              <ul>
-                <li>Live order timeline with proof at every step for reassurance</li>
-              </ul>
+              <p class="lead">Live order timeline with proof at every step for reassurance</p>
             </footer>
           </article>
 
@@ -12193,7 +13934,7 @@
             <header class="disc-card-head">
               <h4>Always Someone to Call</h4>
               <span class="rule" aria-hidden="true"></span>
-              <p class="friction">Post-purchase anxiety — no one to call</p>
+              <p class="friction">After purchasing, buyers feel anxious when there’s no clear person to contact for help.</p>
             </header>
             <div class="disc-card-stage disc-card-stage--help">
               <div class="pp-help" aria-label="Post-purchase support contacts">
@@ -12246,9 +13987,7 @@
             </div>
             <footer class="disc-card-foot">
               <p class="sol-label">Design Solution</p>
-              <ul>
-                <li>AI concierge and human support available on demand, anytime</li>
-              </ul>
+              <p class="lead">AI concierge and human support available on demand, anytime</p>
             </footer>
           </article>
         </div>
@@ -12267,32 +14006,23 @@
                   <div class="story-duo">
                     <div class="side is-friction">
                       <p class="label">User Friction</p>
-                      <p class="quote">No one-stop place to view every certificate and receipt over time — proof gets lost as purchases pile up</p>
+                      <p class="quote">Certificates, receipts, and insurance records become harder to find over time.</p>
                     </div>
                     <div class="side is-solution">
                       <p class="label">Design Solution</p>
-                      <ul class="solution-list">
-                        <li>Flags new certs and insurance instantly</li>
-                        <li>Tracks uploads until every doc lands</li>
-                        <li>Archives each piece with full doc counts</li>
-                      </ul>
+                      <p class="copy">A single archive keeps every piece and document organized and flags anything missing.</p>
                     </div>
                   </div>
                 </div>
                 <div class="vault-annot-panel is-docs">
-                  <h4 class="vault-annot-title">Item Documents</h4>
                   <div class="story-duo">
                     <div class="side is-friction">
                       <p class="label">User Friction</p>
-                      <p class="quote">Certificates, invoices, and insurance sit in separate threads — nothing ties them back to the exact piece</p>
+                      <p class="quote">Scattered documents make it hard to match them to the right piece.</p>
                     </div>
                     <div class="side is-solution">
                       <p class="label">Design Solution</p>
-                      <ul class="solution-list">
-                        <li>Item hero ties every record to the piece, date, and price</li>
-                        <li>Certificate, insurance, and invoice cards with view and download</li>
-                        <li>Share from each card for family handoff or resale proof</li>
-                      </ul>
+                      <p class="copy">Each piece has one place to view, download, and share all its documents.</p>
                     </div>
                   </div>
                 </div>
@@ -12461,7 +14191,7 @@
                           <span class="vault-doc-icon"><img src="assets/vault/icon-doc-file.svg" alt="" width="16" height="16" /></span>
                           <div class="vault-doc-copy">
                             <p class="title">Authenticity Certificate</p>
-                            <p class="desc">Official GIA certificate verifying authenticity</p>
+                            <p class="desc">Official GIA certificate for this diamond ring</p>
                             <p class="time">Added 2 days ago</p>
                           </div>
                         </div>
@@ -12545,15 +14275,15 @@
           <footer class="vault-feature-foot" data-node-id="912:3799">
             <div class="col">
               <p class="label">About the feature</p>
-              <p class="copy">A secure digital vault that stores certificates, inspection photos, and insurance records for every purchase.</p>
+              <p class="copy">A secure digital vault stores certificates, inspection photos, and insurance records for every purchase.</p>
             </div>
             <div class="col">
               <p class="label">How it helps</p>
-              <p class="copy">Buyers access verified provenance anytime — and can share heritage records with family without chasing sellers.</p>
+              <p class="copy">Buyers can access and share verified records anytime without contacting the seller.</p>
             </div>
             <div class="col">
               <p class="label">Trade offs</p>
-              <p class="copy">Requires document upload at fulfilment; worth it when post-purchase trust and resale value depend on proof.</p>
+              <p class="copy">Documents must be uploaded during fulfilment, but the added proof supports long-term trust and resale.</p>
             </div>
           </footer>
         </section>
@@ -12563,11 +14293,11 @@
     <!-- AI TRUST LAYER / DESIGN PIVOT -->
     <section class="visual-section wrap stack-32" id="ai-layer">
       <div class="fig-block">
-        <section class="ai-compare" aria-label="Choosing between Chatbot vs Inline AI" data-node-id="875:1332">
+        <section class="ai-compare" aria-label="Inline AI first, chat second" data-node-id="875:1332">
           <header class="ai-compare-head">
             <p class="eyebrow">The AI trust layer</p>
-            <h2 class="display">Choosing between Chatbot VS Inline AI</h2>
-            <p class="lead">The obvious solution was a chatbot. Every competitor had one. But the more I stress-tested it against my research, the more it felt like a category error.</p>
+            <h2 class="display">Inline AI first. Chat second.</h2>
+            <p class="lead">I treated trust as part of the page, not something buyers should have to ask a chatbot for. Inline AI explains key details upfront, while chat remains available for questions the page cannot answer.</p>
           </header>
 
           <div class="ai-compare-body">
@@ -12576,20 +14306,19 @@
                 <article class="ai-compare-card is-chatbot">
                   <div class="ai-compare-card-top">
                     <p class="ai-compare-card-label"><img src="assets/ai-layer/dot-chatbot.svg" alt="" width="8" height="8" /> The Chatbot</p>
-                    <h3 class="ai-compare-card-title">Feels like a biased assistant</h3>
+                    <h3 class="ai-compare-card-title">Helpful, but easy to perceive as biased</h3>
                   </div>
                   <ul class="ai-compare-list">
-                    <li>Requires the user to formulate a question first</li>
-                    <li>Feels like a sales tool trying to close the deal</li>
-                    <li>Reactive — answers only what's asked</li>
-                    <li>Unpredictable live responses, hard to audit</li>
+                    <li>Buyers must know what to ask.</li>
+                    <li>Responses can feel sales-driven.</li>
+                    <li>It only addresses questions after doubt arises.</li>
+                    <li>Live answers can be inconsistent and harder to review.</li>
                   </ul>
                 </article>
                 <div class="ai-compare-verdict is-chatbot">
-                  <span class="ai-compare-verdict-icon"><img src="assets/ai-layer/icon-cross.svg" alt="" width="20" height="20" /></span>
                   <div class="ai-compare-verdict-copy">
-                    <p class="label">Chatbot Approach</p>
-                    <p>Feels like a salesperson. Every competitor has one. Doesn't solve the real problem.</p>
+                    <p class="label">Role of Chat</p>
+                    <p>Chat works better as a support layer when the information on the page is not enough.</p>
                   </div>
                 </div>
               </div>
@@ -12598,20 +14327,19 @@
                 <article class="ai-compare-card is-inline">
                   <div class="ai-compare-card-top">
                     <p class="ai-compare-card-label"><img src="assets/ai-layer/dot-inline.svg" alt="" width="8" height="8" /> Inline AI Content</p>
-                    <h3 class="ai-compare-card-title">Feels like objective infrastructure</h3>
+                    <h3 class="ai-compare-card-title">Trust built into the experience</h3>
                   </div>
                   <ul class="ai-compare-list">
-                    <li>Answers anxiety before it's formulated as a question</li>
-                    <li>Feels native to the app's architecture, not persuasive</li>
-                    <li>Pre-rendered, auditable, and reviewable</li>
-                    <li>Grounded in verified seller data — not general knowledge</li>
+                    <li>Anticipates common concerns before buyers ask.</li>
+                    <li>Appears naturally within the buying journey.</li>
+                    <li>Uses pre-reviewed, auditable explanations.</li>
+                    <li>Draws only from verified product and seller data.</li>
                   </ul>
                 </article>
                 <div class="ai-compare-verdict is-inline">
-                  <span class="ai-compare-verdict-icon"><img src="assets/ai-layer/icon-check.svg" alt="" width="20" height="20" /></span>
                   <div class="ai-compare-verdict-copy">
-                    <p class="label">Inline AI Approach</p>
-                    <p>AI works quietly in the background. Adds helpful info directly into the experience.</p>
+                    <p class="label">Role of inline AI</p>
+                    <p>Inline AI is the default trust layer, answering concerns directly where they arise.</p>
                   </div>
                 </div>
               </div>
@@ -12620,23 +14348,24 @@
 
           <aside class="ai-compare-callout">
             <div class="ai-compare-callout-body">
-              <p class="ai-compare-callout-eyebrow">Where the chatbot still fits</p>
-              <p class="ai-compare-callout-text">The chatbot isn't gone—it appears at four moments where users still need to ask: the PDP, certification detail, payment confirmation, and order tracking.</p>
+              <p class="ai-compare-callout-eyebrow">When chat enters</p>
+              <p class="ai-compare-callout-text">Chat appears at key moments and seamlessly escalates to a human when needed.</p>
             </div>
           </aside>
         </section>
       </div>
       <div class="overview-sub-head stack-16">
-        <p class="eyebrow soft">Chatbot placement</p>
-        <h3 class="title">Where the chatbot appears — and why</h3>
+        <p class="eyebrow soft">Ask layer</p>
+        <h3 class="title">The page explains first. Chat responds next. A human steps in when needed.</h3>
+        <p class="lead" style="color:var(--ink);opacity:0.75;font-size:1rem;max-width:40rem;margin:0">AI supports the experience without becoming the experience. Trust stays visible on the page, while chat and human support remain available as the stakes rise.</p>
       </div>
       <div class="fig-block">
-        <div class="ai-touchpoints" aria-label="Chatbot placement touchpoints" data-node-id="875:1265">
+        <div class="ai-touchpoints" aria-label="Ask-layer chat entry points" data-node-id="875:1265">
           <article class="ai-touchpoint">
             <header class="ai-touchpoint-head">
               <h4>Product Detail Page</h4>
               <span class="rule" aria-hidden="true"></span>
-              <p class="friction">The PDP is where shoppers face the most uncertainty. An embedded chatbot provides instant answers, reducing friction on the path to purchase.</p>
+              <p class="friction">Price, craft, and certification are explained on the page first. Chat handles any questions that remain.</p>
             </header>
             <div class="ai-touchpoint-stage is-pdp">
               <div class="tp-pdp-frame" aria-label="PDP with Ask Right Away chatbot entry point on product image" data-node-id="877:4801">
@@ -12684,9 +14413,9 @@
           </article>
           <article class="ai-touchpoint" data-node-id="875:1910">
             <header class="ai-touchpoint-head">
-              <h4>Certification detail page</h4>
+              <h4>Certification Detail Overlay</h4>
               <span class="rule" aria-hidden="true"></span>
-              <p class="friction">When a user drills into provenance or hallmark data, they may have specific questions the inline layer can't anticipate.</p>
+              <p class="friction">Inline AI explains the certificate first. Chat handles specific provenance or hallmark questions that remain.</p>
             </header>
             <div class="ai-touchpoint-stage is-cert">
               <div class="tp-cert-frame" aria-label="Certification detail page with IGI metal analysis sheet and Ask Our AI button" data-node-id="875:1917">
@@ -12708,7 +14437,7 @@
                         <img src="assets/ai-layer/cert/icon-check.svg" alt="" width="14" height="14" />
                       </span>
                       <div class="tp-cert-titles">
-                        <p class="tp-cert-title" data-for="report" hidden>Verified with IGI Jewelry Report</p>
+                        <p class="tp-cert-title" data-for="report" hidden>Verified with IGI Jewellery Report</p>
                         <p class="tp-cert-title" data-for="metal">This piece is IGI Certified</p>
                         <p class="tp-cert-sub">Independent lab verification</p>
                       </div>
@@ -12788,7 +14517,7 @@
             <header class="ai-touchpoint-head">
               <h4>Payment confirmation screen</h4>
               <span class="rule" aria-hidden="true"></span>
-              <p class="friction">The highest-stakes decision moment. Users need real-time reassurance before committing ₹76,890, not static text.</p>
+              <p class="friction">Price and verification are explained on the page. Chat handles any final questions before buyers commit.</p>
             </header>
             <div class="ai-touchpoint-stage is-pay">
               <div class="tp-pay-frame" aria-label="Payment confirmation cart with Kreston AI verification" data-node-id="912:4174">
@@ -12810,7 +14539,7 @@
                               <p class="tp-pay-brand">Aaranyaa Jewels</p>
                               <p class="tp-pay-name">Mira Floral Choker</p>
                               <p class="tp-pay-spec">IGI #458921 | 48g | Hand Filigree</p>
-                              <p class="tp-pay-price">₹ 76,890</p>
+                              <p class="tp-pay-price">₹ 1,34,690</p>
                             </div>
                             <div class="tp-pay-controls">
                               <div class="tp-pay-qty" aria-label="Quantity 1">
@@ -12859,14 +14588,14 @@
                           <span class="dot is-ok" aria-hidden="true"></span>
                           <div class="copy">
                             <p class="title">2 pieces verified</p>
-                            <p class="desc">GIA #2336787 and IGI #458921 match vault records for both listings.</p>
+                            <p class="desc">Ring GIA #2336787 and Mira IGI #458921 match vault records for both listings.</p>
                           </div>
                         </div>
                         <div class="tp-pay-ai-row">
                           <span class="dot is-ok" aria-hidden="true"></span>
                           <div class="copy">
                             <p class="title">Cart total at fair market</p>
-                            <p class="desc">₹2,06,616 sits within median range for this ring + choker pairing.</p>
+                            <p class="desc">₹3,30,384 sits within median range for this ring + choker pairing.</p>
                           </div>
                         </div>
                         <div class="tp-pay-ai-row">
@@ -12896,7 +14625,7 @@
             <header class="ai-touchpoint-head">
               <h4>Order Tracking Details</h4>
               <span class="rule" aria-hidden="true"></span>
-              <p class="friction">Human and AI support as a post-purchase experience — reducing buyer anxiety by giving them a single place to ask questions and get real-time updates.</p>
+              <p class="friction">Tracking and the vault show the latest status. Chat handles updates, with human support when something goes wrong.</p>
             </header>
             <div class="ai-touchpoint-stage is-track">
               <div class="tp-track-frame" aria-label="Order tracking with Need Help support including AI Concierge chat" data-node-id="912:4745">
@@ -12980,15 +14709,15 @@
       <div class="fig-block">
         <section class="hybrid-chat" aria-label="AI and human hybrid chat experience" data-node-id="985:2026">
           <header class="hybrid-chat-head">
-            <p class="eyebrow soft">Chatbot experience</p>
-            <h3 class="title">AI + Human, One Chat</h3>
-            <p class="lead">Simple questions are answered instantly. High-stakes moments—like gemstone provenance—escalate to specialists in the same thread.</p>
+            <p class="eyebrow soft">When they do ask</p>
+            <h3 class="title">Hybrid Chat: AI then human in one thread</h3>
+            <p class="lead">AI handles quick questions, while complex or high-stakes concerns move to a specialist without starting a new conversation.</p>
           </header>
           <div class="hybrid-chat-body">
             <div class="hybrid-chat-rationale">
               <p class="hybrid-chat-rationale-label">Design Rationale</p>
-              <h3 class="hybrid-chat-rationale-title">Reduce anxiety with a hybrid concierge</h3>
-              <p class="hybrid-chat-rationale-copy">AI handles quick questions; humans step in for high-stakes moments.</p>
+              <h3 class="hybrid-chat-rationale-title">Chat supports trust, it doesn’t create it</h3>
+              <p class="hybrid-chat-rationale-copy">The page answers first. Chat handles what remains, bringing in a human when the stakes are higher.</p>
             </div>
             <div class="hybrid-venn" aria-label="Shared trust model">
               <article class="hybrid-venn-circle is-ai">
@@ -13020,7 +14749,7 @@
           <div class="hybrid-chat-demo" aria-label="Hybrid Chat Support feature demo" data-node-id="929:3815">
             <div class="hybrid-chat-demo-stage" data-node-id="927:1995">
               <header class="hybrid-chat-demo-head">
-                <p class="hybrid-chat-demo-eyebrow">Main feature</p>
+                <p class="hybrid-chat-demo-eyebrow">When they do ask</p>
                 <h3 class="hybrid-chat-demo-title">Hybrid Chat Support</h3>
               </header>
               <div class="hybrid-chat-demo-canvas">
@@ -13029,15 +14758,11 @@
                   <div class="story-duo">
                     <div class="side is-friction">
                       <p class="label">User Friction</p>
-                      <p class="quote">High-stakes jewellery questions need a human — but phone support drops context and breaks the thread</p>
+                      <p class="quote">High-stakes questions need human support without losing context.</p>
                     </div>
                     <div class="side is-solution">
                       <p class="label">Design Solution</p>
-                      <ul class="solution-list">
-                        <li>AI answers fit, care, and shipping on the spot</li>
-                        <li>One tap escalates to a specialist in-thread</li>
-                        <li>Piece details and history stay in view through handoff</li>
-                      </ul>
+                      <p class="quote">AI handles quick questions, then escalates to a specialist with the full context intact.</p>
                     </div>
                   </div>
                 </aside>
@@ -13144,15 +14869,15 @@
             <footer class="hybrid-chat-demo-foot" aria-label="Hybrid Chat Support feature summary">
               <div class="col">
                 <p class="label">About the feature</p>
-                <p class="copy">One in-thread chat that blends AI answers with human specialists — no channel switch, no context lost.</p>
+                <p class="copy">One chat connects AI support with human specialists without losing context.</p>
               </div>
               <div class="col">
                 <p class="label">How it helps</p>
-                <p class="copy">Buyers get instant answers on fit, care, and shipping; one tap escalates to a gem expert who sees the piece and full chat history.</p>
+                <p class="copy">AI answers quick questions, while one tap brings in an expert who can see the piece and chat history.</p>
               </div>
               <div class="col">
                 <p class="label">Trade offs</p>
-                <p class="copy">Needs specialist staffing for live handoffs; worth it when high-stakes questions decide a ₹1L+ purchase.</p>
+                <p class="copy">Live handoffs require specialist availability, but can be critical for ₹1L+ purchases.</p>
               </div>
             </footer>
           </div>
@@ -13167,7 +14892,7 @@
         <h2 class="display">Designing the AI as a translator, not a judge</h2>
       </div>
       <div class="stack-32">
-        <p class="lead" style="color:var(--ink);opacity:0.8;font-size:clamp(1.05rem,1.4vw,1.375rem)">Marketplace design is a two-sided coin. Building buyer trust meant understanding the supply side too — research with artisans in Jaipur, Thrissur, and Chandni Chowk revealed anxieties as real as the buyers'.</p>
+        <p class="lead" style="color:var(--ink);opacity:0.8;font-size:clamp(1.05rem,1.4vw,1.375rem)">Building buyer trust also meant understanding the artisans behind each piece. Conversations with makers in Jaipur, Thrissur, and Chandni Chowk revealed that they had their own concerns about how AI might represent their work.</p>
         <figure class="quote-box">
           <blockquote>Compare my necklace to a machine piece on purity and price, I lose. But my value is in 40 hours of hand labor, a unique regional style, and a design that will never be made again. A database doesn't understand art.</blockquote>
           <figcaption><cite>Third-generation filigree artisan, Jaipur</cite></figcaption>
@@ -13175,25 +14900,25 @@
       </div>
       <div class="stack-16">
         <h3 class="title">Design Guardrails</h3>
-        <p class="lead">These conversations shaped three permanent design guardrails - decisions that don't appear on any screen, but govern everything that does.</p>
+        <p class="lead">These conversations shaped three lasting guardrails. They may not appear directly on the screen, but they guide how the AI compares, explains, and represents every piece.</p>
         <div class="principle-grid">
           <article class="principle">
             <div><p class="n">01</p><p class="plabel">Design Principle</p></div>
             <hr />
-            <h3>Pricing the art,<br />not just the materials</h3>
-            <p class="lead">Making charge isn't a hidden fee — it's the craft story. AI uses Maker Lineage data to explain: "35 hours of Kumartuli embossing." We price the art, not just materials.</p>
+            <h3>Price the craft,<br />not just the material</h3>
+            <p class="lead">Making charges are explained through the work behind the piece, such as “35 hours of Kumartuli embossing,” so buyers understand the value of the craft.</p>
           </article>
           <article class="principle">
             <div><p class="n">02</p><p class="plabel">Design Principle</p></div>
             <hr />
-            <h3>Verified by craft,<br />not ranked by algorithm</h3>
-            <p class="lead">No star ratings or algorithmic ranking. Sellers are either "Platform Verified" or not listed — protecting artisan reputation from algorithm games.</p>
+            <h3>Verified, not ranked</h3>
+            <p class="lead">Artisans are either platform-verified or not listed. There are no star ratings or algorithmic rankings that reduce their work to a score.</p>
           </article>
           <article class="principle">
             <div><p class="n">03</p><p class="plabel">Design Principle</p></div>
             <hr />
-            <h3>Artisans as co-brands,<br />not sellers</h3>
-            <p class="lead">Artisan name and origin get top billing alongside the product title — every page feels like a co-branded partnership, not a commodity listing.</p>
+            <h3>Artisans are partners,<br />not sellers</h3>
+            <p class="lead">The artisan’s name and origin appear alongside the product title, making every listing feel like a partnership rather than a commodity.</p>
           </article>
         </div>
       </div>
@@ -13204,19 +14929,19 @@
             <div><p class="n">01</p><p class="plabel">Guardrail</p></div>
             <hr />
             <h3>No resale predictions</h3>
-            <p class="lead">Indian buyers see gold as investment, but forecasting creates false confidence. The AI shows current verified value — never speculative predictions.</p>
+            <p class="lead">AI shows the piece’s current verified value without making speculative forecasts.</p>
           </article>
           <article class="guardrail">
             <div><p class="n">02</p><p class="plabel">Guardrail</p></div>
             <hr />
-            <h3>No competitor comparisons</h3>
-            <p class="lead">Kreston's AI is a translator, not a salesperson. Comparing sellers or brands introduces bias and undermines the neutrality that makes the trust layer credible.</p>
+            <h3>No biased comparisons</h3>
+            <p class="lead">AI compares verified details such as price, technique, weight, and certification. It never ranks artisans or pushes one piece over another.</p>
           </article>
           <article class="guardrail">
             <div><p class="n">03</p><p class="plabel">Guardrail</p></div>
             <hr />
-            <h3>No guessing under data uncertainty</h3>
-            <p class="lead">If core authentication data is missing, the system flags it and escalates to a human expert. It never fills gaps with generalization. Uncertainty is surfaced, never papered over.</p>
+            <h3>No guessing when data is missing</h3>
+            <p class="lead">When authentication data is incomplete, AI clearly flags the gap and brings in a human expert instead of filling it with assumptions.</p>
           </article>
         </div>
       </div>
@@ -13267,7 +14992,7 @@
                   </span>
                   <span class="label">Content Authenticity</span>
                 </div>
-                <p class="insight">Users struggled to distinguish AI-generated descriptions from verified human content on the product detail page.</p>
+                <p class="insight">Users couldn’t tell AI descriptions from verified human content on the product page.</p>
               </div>
 
               <div class="feedback-obs-secondary">
@@ -13287,7 +15012,7 @@
                     </span>
                     <span class="label">AI Trust Perception</span>
                   </div>
-                  <p>Users instinctively distrust AI-generated information — it triggers skepticism even when the content is accurate.</p>
+                  <p>AI-generated information can feel untrustworthy, even when it’s accurate.</p>
                 </article>
               </div>
             </div>
@@ -13296,7 +15021,7 @@
               <div class="feedback-solution-copy">
                 <p class="eyebrow">Solution</p>
                 <h3>Subtle AI Visual Grammar</h3>
-                <p class="body">Instead of announcing AI loudly, we gave it a subtle visual grammar — a brand-verified icon that quietly distinguishes AI content from human-written descriptions.</p>
+                <p class="body">A subtle brand-verified icon that distinguishes AI content from human-written descriptions.</p>
               </div>
               <hr class="feedback-solution-rule" />
               <div class="feedback-spark-row">
@@ -13388,7 +15113,7 @@
                   </span>
                   <span class="label">Content Authenticity</span>
                 </div>
-                <p>Users struggled to distinguish AI-generated descriptions from verified human content on the product detail page.</p>
+                <p>Users couldn’t tell AI descriptions from verified human content on the product page.</p>
               </article>
 
               <div class="feedback-obs-primary">
@@ -13408,7 +15133,7 @@
                   </span>
                   <span class="label">AI Trust Perception</span>
                 </div>
-                <p>Users instinctively distrust AI-generated information — it triggers skepticism even when the content is accurate.</p>
+                <p>AI-generated information can feel untrustworthy, even when it’s accurate.</p>
               </article>
             </div>
 
@@ -13416,7 +15141,7 @@
               <div class="feedback-solution-copy">
                 <p class="eyebrow">Solution</p>
                 <h3>Traceable Source Anchors</h3>
-                <p class="body">Every AI claim links to its source — a ‘Verified via GIA Database ↗’ anchor lets users cross-check facts instantly.</p>
+                <p class="body">Every AI claim links directly to its source, such as the verified IGI certificate.</p>
               </div>
               <hr class="feedback-solution-rule" />
               <div class="feedback-cert-clip" aria-hidden="true">
@@ -13480,7 +15205,7 @@
                     </span>
                     <span class="label">Content Authenticity</span>
                   </div>
-                  <p>Users struggled to distinguish AI-generated descriptions from verified human content on the product detail page.</p>
+                  <p>Users couldn’t tell AI descriptions from verified human content on the product page.</p>
                 </article>
                 <article class="feedback-obs-card">
                   <div class="feedback-cat">
@@ -13500,7 +15225,7 @@
                   </span>
                   <span class="label">AI Trust Perception</span>
                 </div>
-                <p class="insight">Users instinctively distrust AI-generated information — it triggers skepticism even when the content is accurate.</p>
+                <p class="insight">AI-generated information can feel untrustworthy, even when it’s accurate.</p>
               </div>
             </div>
 
@@ -13508,7 +15233,7 @@
               <div class="feedback-solution-copy">
                 <p class="eyebrow">Solution</p>
                 <h3>Designing the system to say<br>“I don’t know”</h3>
-                <p class="body">When the AI isn’t sure, it says so — displaying confidence indicators and routing ambiguous queries to human experts rather than guessing.</p>
+                <p class="body">When unsure, AI shows its confidence and routes the question to a human expert instead of guessing.</p>
               </div>
               <hr class="feedback-solution-rule" />
               <div class="feedback-cert-clip" aria-hidden="true">
@@ -13579,14 +15304,14 @@
       <div class="stack-24">
         <p class="eyebrow" style="font-weight:700">What's next</p>
         <h2 class="display">If Kreston were a real product, here's the next design problem</h2>
-        <p class="lead" style="font-size:1.125rem">The buyer-facing trust layer was the design thesis of this project. But a two-sided marketplace has two sets of anxieties - and the seller side is the design problem this prototype intentionally deferred.</p>
+        <p class="lead" style="font-size:1.125rem">The buyer trust layer was the focus of this project. The seller experience brings its own challenges and was intentionally left for the next phase.</p>
       </div>
       <div class="next-grid">
         <article class="next-card">
           <span class="badge">Next priority</span>
           <h3>Seller Onboarding UX</h3>
           <hr />
-          <p>Make certification upload frictionless — and clearly flag which data gaps trigger low confidence — so buyer trust is built upstream.</p>
+          <p>Make certification uploads simple and flag missing data early, so buyer trust starts with the seller.</p>
           <div class="tension">
             <span>Core Tension</span>
             <p>How to make rigorous authentication feel empowering, not bureaucratic?</p>
@@ -13596,7 +15321,7 @@
           <span class="badge">Next priority</span>
           <h3>Proof Vault Sharing UX</h3>
           <hr />
-          <p>Turning the Proof Vault into a shareable handoff — so certificates and provenance records pass to family with the weight of a physical document, not a screenshot.</p>
+          <p>Make the Proof Vault shareable, so certificates and provenance records can be passed to family as trusted documents, not screenshots.</p>
           <div class="tension">
             <span>Core Tension</span>
             <p>“How to design a share moment that feels like handing over a document?”</p>
@@ -13606,7 +15331,7 @@
           <span class="badge dark">Future surface</span>
           <h3>Regional Language Support</h3>
           <hr />
-          <p>Buyers in Tamil Nadu, Kerala, and West Bengal don't all transact in English. AI cert explanations in their first language isn't localization — it's a trust multiplier.</p>
+          <p>Buyers across India don’t all shop in English. Explaining certificates in their preferred language isn’t just localization; it makes the information easier to understand and trust.</p>
           <div class="tension">
             <span style="font-size:0.75rem">Core Tension</span>
             <p>How to maintain precision of technical certification across translations?</p>
@@ -13667,6 +15392,23 @@
             <p class="lesson">“Pair rational proof with emotional narrative.”</p>
           </div>
         </article>
+      </div>
+    </section>
+
+    <!-- CASE CLOSE -->
+    <section class="section wrap case-close" id="close" aria-label="End of case study">
+      <div class="case-close-card">
+        <div class="case-close-inner">
+          <p class="case-close-eyebrow">End of the case. Not the conversation.</p>
+          <div class="case-close-headline">
+            <h2 class="case-close-title">Work with <em>me.</em></h2>
+          </div>
+          <div class="case-close-links">
+            <a class="case-close-link" href="mailto:Designsbypohani@gmail.com">Email</a>
+            <a class="case-close-link" href="https://www.linkedin.com/in/khushbu-pohani/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="case-close-link is-accent" href="https://drive.google.com/file/d/1VInbDtnEarcg0rKczkD-SrPhdXCaijaF/view?usp=sharing" target="_blank" rel="noopener noreferrer">Résumé</a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -13758,6 +15500,8 @@
             end: "+=320%",
             scrub: reduce ? false : 0.6,
             pin: panel,
+            pinSpacing: true,
+            pinType: "fixed",
             anticipatePin: 1,
             invalidateOnRefresh: true,
             onUpdate(self) {
@@ -13829,8 +15573,7 @@
 
       const pin = document.getElementById("feedbackBoardPin");
       const stage = document.getElementById("feedbackBoardStage");
-      const endMark = document.getElementById("feedbackBoardEnd");
-      if (!pin || !stage || !endMark) return;
+      if (!pin || !stage) return;
 
       const slides = gsap.utils.toArray("#feedbackBoardStage .feedback-board");
       if (slides.length < 3) return;
@@ -13903,12 +15646,13 @@
         tl = gsap.timeline({
           defaults: { ease: "none" },
           scrollTrigger: {
-            trigger: endMark,
-            start: "top bottom",
+            trigger: pin,
+            start: "top top",
             end: "+=260%",
             scrub: reduce ? false : 0.65,
-            pin: pin,
+            pin: true,
             pinSpacing: true,
+            pinType: "fixed",
             anticipatePin: 1,
             invalidateOnRefresh: true,
             onUpdate(self) {
@@ -13949,6 +15693,8 @@
       const spark = document.getElementById("heroSpark");
       const slot = document.getElementById("sparkSlot");
       const card = document.getElementById("priceCard");
+      const cert = document.getElementById("certCard");
+      const rightCol = document.getElementById("bentoRight");
       const glow = document.getElementById("heroGlow");
       const ring = document.getElementById("heroRing");
       const particlesWrap = document.getElementById("heroParticles");
@@ -13960,6 +15706,15 @@
       const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       const FINAL = 23.5;
       const BIG = () => Math.max(180, Math.min(260, window.innerWidth * 0.26));
+
+      function syncRightHeight() {
+        if (!rightCol || !card) return;
+        if (window.matchMedia("(max-width: 720px)").matches) {
+          rightCol.style.height = "";
+          return;
+        }
+        rightCol.style.height = card.offsetHeight + "px";
+      }
 
       for (let i = 0; i < 14; i++) {
         particlesWrap.appendChild(document.createElement("i"));
@@ -14025,15 +15780,19 @@
       }
 
       function settleStatic() {
-        const f = anchorSpark();
+        anchorSpark();
         gsap.set(spark, { x: 0, y: 0, scale: 1, opacity: 1 });
         resetStroke(true);
-        gsap.set(card, { opacity: 1, clipPath: "none" });
+        gsap.set(card, { opacity: 1, y: 0, scale: 1, clipPath: "none" });
+        if (cert) gsap.set(cert, { opacity: 1, x: 0, y: 0 });
+        gsap.set("#satProof, #satTrade, #satChat, #satEmi, #satTrack", { opacity: 1, x: 0, y: 0 });
+        gsap.set(".sat-chat-bubble, .sat-chat-pills, .sat-chat-expert", { opacity: 1, y: 0 });
         gsap.set(reveals, { opacity: 1, y: 0 });
         gsap.set(bars, { scaleX: 1 });
         gsap.set(particles, { opacity: 0 });
         gsap.set(glow, { opacity: 0 });
         if (priceEl) priceEl.textContent = inr(134690);
+        requestAnimationFrame(syncRightHeight);
       }
 
       function run() {
@@ -14042,7 +15801,14 @@
           return;
         }
 
-        gsap.set(card, { opacity: 0 });
+        const leftTiles = gsap.utils.toArray("#satProof, #satTrade, #satEmi, #satTrack");
+        const chatBits = gsap.utils.toArray(".sat-chat-bubble, .sat-chat-pills, .sat-chat-expert");
+
+        gsap.set(card, { opacity: 0, y: 28, scale: 0.97 });
+        if (cert) gsap.set(cert, { opacity: 0, x: 28, y: 12 });
+        gsap.set(leftTiles, { opacity: 0, x: -22, y: 10 });
+        gsap.set("#satChat", { opacity: 0, x: 28, y: 16 });
+        gsap.set(chatBits, { opacity: 0, y: 10 });
         gsap.set(bars, { scaleX: 0 });
         gsap.set(glow, { opacity: 0, scale: 0.55 });
         gsap.set(ring, { opacity: 0, scale: 0.3 });
@@ -14057,6 +15823,7 @@
 
           const f = anchorSpark();
           gsap.set(spark, { x: f.x, y: f.y, scale: f.scale, opacity: 0 });
+          gsap.set(card, { opacity: 0, y: 28, scale: 0.97 });
           const { stroke, rays } = resetStroke(false);
 
           const pts = [];
@@ -14064,64 +15831,106 @@
           for (let i = 0; i < n; i++) {
             const p = particles[i];
             const angle = (i / n) * Math.PI * 2 + 0.4;
-            const radius = Math.min(f.stageBox.width, f.stageBox.height) * (0.3 + (i % 3) * 0.075);
-            const size = 4 + (i % 3) * 2;
-            const left = f.cx + Math.cos(angle) * radius;
-            const top = f.cy + Math.sin(angle) * radius;
+            const radius = Math.min(f.stageBox.width, f.stageBox.height) * (0.28 + (i % 3) * 0.07);
+            const size = 3.5 + (i % 3) * 1.5;
             gsap.set(p, {
               width: size, height: size,
-              left, top,
+              left: f.cx + Math.cos(angle) * radius,
+              top: f.cy + Math.sin(angle) * radius,
               xPercent: -50, yPercent: -50,
-              opacity: 0, scale: 0.6
+              opacity: 0, scale: 0.5
             });
             pts.push(p);
           }
 
-          const tl = gsap.timeline();
-
-          pts.forEach((p, i) => {
-            tl.to(p, { opacity: 0.85, scale: 1, duration: 0.45, ease: "power2.out" }, 0.05 * i)
-              .to(p, {
-                left: f.cx, top: f.cy, opacity: 0, scale: 0.3,
-                duration: 0.95, ease: "power3.in"
-              }, 0.6 + 0.035 * i);
+          const tl = gsap.timeline({
+            defaults: { ease: "power3.out" },
+            onUpdate: syncRightHeight,
+            onComplete: syncRightHeight
           });
 
-          tl.to(glow, { opacity: 1, scale: 1, duration: 1.1, ease: "power2.out" }, 0.5)
-            .to(spark, { opacity: 1, duration: 0.3 }, 1.25)
-            .to(stroke, {
-              strokeDashoffset: 0, opacity: 1, duration: 0.95, ease: "power2.inOut"
-            }, 1.3)
-            .to(rays, {
-              strokeDashoffset: 0, opacity: 1, duration: 0.48, ease: "power2.out", stagger: 0.06
-            }, 1.3 + 0.95 * 0.45)
-            .to(spark.querySelector(".star-fill"), { opacity: 0.2, duration: 0.4 }, 2.15)
-            .to(spark, { scale: f.scale * 1.08, duration: 0.22, ease: "power2.out" }, 2.3)
-            .to(spark, { x: 0, y: 0, scale: 1, duration: 1.0, ease: "power4.inOut" }, 2.52)
-            .to(glow, { opacity: 0, scale: 1.4, duration: 0.9 }, 2.5);
+          /* 1 — particles gather */
+          pts.forEach((p, i) => {
+            tl.to(p, { opacity: 0.8, scale: 1, duration: 0.35 }, 0.04 * i)
+              .to(p, {
+                left: f.cx, top: f.cy, opacity: 0, scale: 0.25,
+                duration: 0.75, ease: "power3.in"
+              }, 0.45 + 0.028 * i);
+          });
 
-          gsap.set(card, { opacity: 1, clipPath: "inset(0% 0% 100% 0%)" });
-          gsap.set(reveals, { opacity: 0, y: 10 });
-          tl.to(card, { clipPath: "inset(0% 0% 0% 0%)", duration: 1.2, ease: "power3.inOut" }, 3.0)
-            .to(reveals, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out", stagger: 0.06 }, 3.15)
-            .to(bars, { scaleX: 1, duration: 0.85, ease: "power2.out", stagger: 0.07 }, 3.5);
+          /* 2 — spark draws, settles into price title */
+          tl.to(glow, { opacity: 1, scale: 1, duration: 0.9, ease: "power2.out" }, 0.35)
+            .to(spark, { opacity: 1, duration: 0.25 }, 0.95)
+            .to(stroke, {
+              strokeDashoffset: 0, opacity: 1, duration: 0.75, ease: "power2.inOut"
+            }, 1.0)
+            .to(rays, {
+              strokeDashoffset: 0, opacity: 1, duration: 0.4, ease: "power2.out", stagger: 0.05
+            }, 1.35)
+            .to(spark.querySelector(".star-fill"), { opacity: 0.22, duration: 0.3 }, 1.7)
+            .to(spark, { scale: f.scale * 1.06, duration: 0.18, ease: "power2.out" }, 1.85)
+            .to(spark, { x: 0, y: 0, scale: 1, duration: 0.85, ease: "power4.inOut" }, 2.0)
+            .to(glow, { opacity: 0, scale: 1.35, duration: 0.75 }, 2.0);
+
+          /* 3 — price card arrives as the hero */
+          gsap.set(reveals, { opacity: 0, y: 12 });
+          tl.to(card, {
+            opacity: 1, y: 0, scale: 1,
+            duration: 0.85, ease: "power3.out"
+          }, 2.45)
+            .to(reveals, {
+              opacity: 1, y: 0,
+              duration: 0.5, ease: "power2.out",
+              stagger: 0.05
+            }, 2.6)
+            .to(bars, {
+              scaleX: 1,
+              duration: 0.7, ease: "power2.out",
+              stagger: 0.06
+            }, 2.85);
 
           const obj = { v: 0 };
           tl.to(obj, {
             v: 134690,
-            duration: 1.1,
+            duration: 1.0,
             ease: "power2.out",
             onUpdate: () => { if (priceEl) priceEl.textContent = inr(obj.v); }
-          }, 3.3);
+          }, 2.65);
 
           gsap.set(ring, {
             left: f.slotLeft + FINAL / 2,
             top: f.slotTop + FINAL / 2,
-            width: 84, height: 84,
-            scale: 0.35, opacity: 0
+            width: 72, height: 72,
+            scale: 0.4, opacity: 0
           });
-          tl.to(ring, { opacity: 0.55, scale: 1, duration: 0.25, ease: "power2.out" }, 3.5)
-            .to(ring, { opacity: 0, scale: 1.7, duration: 0.7, ease: "power2.out" }, 3.75);
+          tl.to(ring, { opacity: 0.45, scale: 1, duration: 0.22, ease: "power2.out" }, 2.9)
+            .to(ring, { opacity: 0, scale: 1.65, duration: 0.55, ease: "power2.out" }, 3.1);
+
+          /* 4 — satellites: left column cascades in, right column from the side */
+          tl.to(leftTiles, {
+            opacity: 1, x: 0, y: 0,
+            duration: 0.65,
+            stagger: 0.09,
+            ease: "power3.out"
+          }, 3.05);
+
+          if (cert) {
+            tl.to(cert, {
+              opacity: 1, x: 0, y: 0,
+              duration: 0.7, ease: "power3.out"
+            }, 3.1);
+          }
+
+          tl.to("#satChat", {
+            opacity: 1, x: 0, y: 0,
+            duration: 0.7, ease: "power3.out"
+          }, 3.25)
+            .to(chatBits, {
+              opacity: 1, y: 0,
+              duration: 0.45,
+              stagger: 0.07,
+              ease: "power2.out"
+            }, 3.45);
         };
 
         const io = new IntersectionObserver((entries) => {
@@ -14129,24 +15938,31 @@
             io.disconnect();
             requestAnimationFrame(start);
           }
-        }, { threshold: 0.25 });
+        }, { threshold: 0.2 });
         io.observe(stage);
 
-        // Fallback if already in view / observer misses
         setTimeout(() => {
           if (!started) {
             io.disconnect();
             start();
           }
-        }, 1200);
+        }, 1000);
       }
+
+      if (typeof ResizeObserver !== "undefined") {
+        const ro = new ResizeObserver(() => syncRightHeight());
+        ro.observe(card);
+      }
+      window.addEventListener("resize", syncRightHeight);
 
       if (document.readyState === "loading") {
         document.addEventListener("DOMContentLoaded", run);
       } else {
         run();
       }
+      requestAnimationFrame(syncRightHeight);
     })();
+  
   </script>
   <script>
     /* Discovery — subtle social-proof entrance + live number ticker */
@@ -15044,7 +16860,7 @@
   <script>
     /* AI layer — Hybrid chat expert handoff */
     (function () {
-      const phone = document.querySelector(".hybrid-chat-demo-phone");
+      const phone = document.querySelector(".hybrid-chat-demo-phone-wrap .hybrid-chat-demo-phone");
       if (!phone) return;
 
       const phoneWrap = phone.closest(".hybrid-chat-demo-phone-wrap");
