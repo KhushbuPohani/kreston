@@ -3449,6 +3449,20 @@
 
     /* Scroll story — pinned crossfade (Frame 1 → Frame 2) */
     .comparison-pin-space { position: relative; }
+    /* Desktop: the panel is sticky inside its own section (not a GSAP fixed pin), so it can
+       never float over other sections. It sticks once its bottom meets the viewport bottom
+       (--cmp-top = viewport − panel height, set in JS); ::after adds the 320vh of scrub room. */
+    @media (min-width: 1101px) {
+      .comparison-pin-space > .comparison-pin-panel {
+        position: sticky;
+        top: var(--cmp-top, 0px);
+      }
+      .comparison-pin-space::after {
+        content: "";
+        display: block;
+        height: 320vh;
+      }
+    }
     .comparison-pin-panel {
       min-height: 100vh;
       display: flex;
@@ -19054,7 +19068,7 @@
       onScroll();
     })();
 
-    /* Comparison scroll story — pin + crossfade (Frame 1 → Frame 2) */
+    /* Comparison scroll story — sticky panel + crossfade (Frame 1 → Frame 2) */
     (function () {
       if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") return;
       gsap.registerPlugin(ScrollTrigger);
@@ -19100,17 +19114,18 @@
         gsap.set([leftFrames[0], rightFrames[0], callouts[0]], { opacity: 1 });
         gsap.set([callouts[1], callouts[2], callouts[3]], { y: 14 });
 
+        /* No GSAP pin: the panel is position: sticky (CSS) and the space's ::after adds
+           the 320vh. Start when the panel's bottom meets the viewport bottom (the moment it
+           begins to stick). Positions are absolute numbers read from layout, so a refresh
+           mid-scroll in embedded browsers can't skew them. */
+        const stickStart = () => space.getBoundingClientRect().top + window.scrollY - Math.min(0, window.innerHeight - panel.offsetHeight);
         tl = gsap.timeline({
           defaults: { ease: "none" },
           scrollTrigger: {
-            trigger: row,
-            start: "bottom bottom",
-            end: "+=320%",
+            trigger: space,
+            start: stickStart,
+            end: () => stickStart() + window.innerHeight * 3.2,
             scrub: reduce ? false : 0.6,
-            pin: panel,
-            pinSpacing: true,
-            pinType: "fixed",
-            anticipatePin: 1,
             invalidateOnRefresh: true,
             onUpdate(self) {
               const p = self.progress;
@@ -19174,13 +19189,17 @@
         }
       }
 
-      fitPhones();
-      build();
-      mqMobile.addEventListener("change", () => { fitPhones(); build(); });
+      /* Sticky offset: the panel sticks once its bottom meets the viewport bottom */
+      function setStickyTop() {
+        panel.style.setProperty("--cmp-top", `${Math.min(0, window.innerHeight - panel.offsetHeight)}px`);
+      }
 
-      /* Embedded/touch browsers apply window.scrollTo asynchronously and pin via
-         transform, so a refresh mid-scroll drifts the pin. Only refresh from the
-         top, and never on resize while scrolled into the pinned range. */
+      fitPhones();
+      setStickyTop();
+      build();
+      mqMobile.addEventListener("change", () => { fitPhones(); setStickyTop(); build(); });
+      new ResizeObserver(setStickyTop).observe(panel);
+
       /* On the full case-study page, do not force scrollY=0 on load (would yank the user).
          Refresh only when already near the top; otherwise refresh in place. */
       ScrollTrigger.config({ autoRefreshEvents: "visibilitychange,DOMContentLoaded,load" });
@@ -19199,7 +19218,8 @@
         clearTimeout(rt);
         rt = setTimeout(() => {
           fitPhones();
-          if ((window.scrollY || 0) < 4) ScrollTrigger.refresh();
+          setStickyTop();
+          ScrollTrigger.refresh(); // safe mid-scroll now that nothing is pinned with position: fixed
         }, 200);
       });
     })();
