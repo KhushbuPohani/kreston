@@ -9638,18 +9638,6 @@
       position: relative;
       width: 100%;
     }
-    /* Desktop: the board sticks inside its own section while the frames scrub,
-       so it can never float over other sections the way a fixed pin can */
-    @media (min-width: 961px) {
-      .feedback-board-pin {
-        position: sticky;
-        top: 0;
-      }
-      .feedback-narrative::after {
-        content: "";
-        flex: 0 0 260vh;
-      }
-    }
     .feedback-board-stage {
       position: relative;
       width: 100%;
@@ -9664,9 +9652,9 @@
     }
     .feedback-carousel-controls { display: none; }
 
-    /* Feedback board — tablet accordion (721–1100px), UI as hero */
+    /* Feedback board — accordion from 721px up (tablet + desktop), UI as hero; phones keep the carousel */
     .fb-tab { display: none; }
-    @media (min-width: 721px) and (max-width: 1100px) {
+    @media (min-width: 721px) {
       #feedback .feedback-board-pin,
       #feedback .feedback-carousel-controls,
       #feedback .feedback-narrative::after { display: none; }
@@ -9736,7 +9724,14 @@
       .fb-mock .chips span { display: inline-flex; align-items: center; gap: 4px; padding: 3px 7px 3px 3px; border-radius: 999px; border: 1px solid #ece4da; font-size: 11px; }
       .fb-mock .chips b { width: 15px; height: 15px; border-radius: 50%; background: #efe6dc; display: grid; place-items: center; font-size: 7.5px; }
     }
-    @media (min-width: 721px) and (max-width: 1100px) and (prefers-reduced-motion: reduce) {
+    /* Desktop: a little more scale for the wider section */
+    @media (min-width: 1101px) {
+      .fb-acc .n { font-size: 30px; }
+      .fb-acc .insight { font-size: 26px; }
+      .fb-caption .sol-title { font-size: 26px; }
+      .fb-caption .sol-body { font-size: 14.5px; }
+    }
+    @media (min-width: 721px) and (prefers-reduced-motion: reduce) {
       .fb-stage, .fb-mock, .fb-mock .bar span { transition: none; }
     }
     .feedback-carousel-dots { display: flex; align-items: center; gap: 6px; }
@@ -11478,6 +11473,65 @@
       border-right: 1px solid rgba(162, 130, 90, 0.5);
       border-bottom: 1px solid rgba(162, 130, 90, 0.5);
       transform: rotate(-45deg);
+    }
+    /* Desktop Q&A annotation for Trade Off, Vault and Hybrid chat — same look as the
+       Certification story strip: italic question, "Answered by", arrow into the phone */
+    .qa-strip {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .qa-strip .qa-q {
+      margin: 0;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 30px;
+      line-height: 1.1;
+      color: var(--ink-deep);
+    }
+    .qa-strip .qa-a {
+      margin: 0;
+      font-family: var(--ui-sans);
+      font-size: 16px;
+      line-height: 1.45;
+      color: #3d3832;
+    }
+    .qa-strip .qa-k {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--sage);
+    }
+    .qa-strip::before,
+    .qa-strip::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+    }
+    .qa-strip::before {
+      left: calc(100% + 8px);
+      width: 40px;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(162, 130, 90, 0.45), rgba(162, 130, 90, 0.18));
+    }
+    .qa-strip::after {
+      left: calc(100% + 42px);
+      margin-top: -3px;
+      width: 6px;
+      height: 6px;
+      border-right: 1px solid rgba(162, 130, 90, 0.5);
+      border-bottom: 1px solid rgba(162, 130, 90, 0.5);
+      transform: rotate(-45deg);
+    }
+    /* Place each strip so its arrow stops just short of the phone, as on Certification */
+    .to-feature .to-annot-wrap { left: 116px; width: 256px; }
+    .vault-feature .vault-annot-wrap { left: 116px; width: 256px; }
+    @media (min-width: 1101px) {
+      .hybrid-chat-demo-stage .hybrid-chat-demo-annot { right: calc(100% + 52px); }
     }
     .var-d .cert-tap {
       transition: left 0.35s ease, top 0.35s ease, opacity 0.25s ease, box-shadow 0.28s ease;
@@ -16879,20 +16933,11 @@
                 </div>
               </div>
 
-              <aside class="to-annot-wrap" aria-label="Trade Off annotation">
-                <div class="story-duo">
-                  <div class="side is-friction">
-                    <p class="label">User Friction</p>
-                    <p class="quote for-idle">Similar pieces can feel interchangeable, making it hard for buyers to understand why one costs more.</p>
-                    <p class="quote for-open">A ₹74,500 gap looks like a discount, hiding the trade-offs behind it.</p>
-                  </div>
-                  <div class="side is-solution">
-                    <p class="label">Design Solution</p>
-                    <p class="copy for-idle">Side-by-side details make the trade-offs and craft premium clear without pushing a sale.</p>
-                    <p class="copy for-open">Comparison rows and an AI summary clarify what buyers gain or give up without ranking sellers.</p>
-                  </div>
+              <aside class="to-annot-wrap" aria-label="Trade Off: question and answer">
+                <div class="story-qa qa-strip">
+                  <p class="qa-q">“Why does this one cost more?”</p>
+                  <p class="qa-a"><span class="qa-k">Answered by</span>A neutral comparison of craft, weight, and resale.</p>
                 </div>
-                <span class="to-annot-line" aria-hidden="true"></span>
               </aside>
 
               <div class="to-phone cert-phone" aria-label="Kreston product page with similar chokers" data-node-id="848:7957">
@@ -17300,30 +17345,10 @@
                 <h4>The Digital Proof Vault</h4>
               </header>
 
-              <aside class="vault-annot-wrap" aria-label="Your Vault home annotation" data-node-id="912:3776">
-                <div class="vault-annot-panel is-home">
-                  <div class="story-duo">
-                    <div class="side is-friction">
-                      <p class="label">User Friction</p>
-                      <p class="quote">Certificates, receipts, and insurance records become harder to find over time.</p>
-                    </div>
-                    <div class="side is-solution">
-                      <p class="label">Design Solution</p>
-                      <p class="copy">A single archive keeps every piece and document organized and flags anything missing.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="vault-annot-panel is-docs">
-                  <div class="story-duo">
-                    <div class="side is-friction">
-                      <p class="label">User Friction</p>
-                      <p class="quote">Scattered documents make it hard to match them to the right piece.</p>
-                    </div>
-                    <div class="side is-solution">
-                      <p class="label">Design Solution</p>
-                      <p class="copy">Each piece has one place to view, download, and share all its documents.</p>
-                    </div>
-                  </div>
+              <aside class="vault-annot-wrap" aria-label="Vault: question and answer" data-node-id="912:3776">
+                <div class="story-qa qa-strip">
+                  <p class="qa-q">“Where did I keep that certificate?”</p>
+                  <p class="qa-a"><span class="qa-k">Answered by</span>A vault that keeps every document with its piece.</p>
                 </div>
               </aside>
 
@@ -18077,16 +18102,10 @@
               </header>
               <div class="hybrid-chat-demo-canvas">
                 <div class="hybrid-chat-demo-phone-wrap">
-                <aside class="hybrid-chat-demo-annot" aria-label="Hybrid chat friction and solution">
-                  <div class="story-duo">
-                    <div class="side is-friction">
-                      <p class="label">User Friction</p>
-                      <p class="quote">High-stakes questions need human support without losing context.</p>
-                    </div>
-                    <div class="side is-solution">
-                      <p class="label">Design Solution</p>
-                      <p class="quote">AI handles quick questions, then escalates to a specialist with the full context intact.</p>
-                    </div>
+                <aside class="hybrid-chat-demo-annot" aria-label="Hybrid chat: question and answer">
+                  <div class="story-qa qa-strip">
+                    <p class="qa-q">“Can I talk to a real person?”</p>
+                    <p class="qa-a"><span class="qa-k">Answered by</span>One tap to a specialist, with the chat intact.</p>
                   </div>
                 </aside>
                 <div class="hybrid-chat-demo-phone" data-node-id="929:3188">
@@ -18328,7 +18347,7 @@
             <p class="lead">Key insights uncovered during user testing and the solutions designed to address them.</p>
           </div>
 
-          <!-- Tablet (721–1100px): accordion with the UI as hero; desktop uses the sticky board below, phones the carousel -->
+          <!-- 721px and up: accordion with the UI as hero; phones use the carousel boards below -->
           <div class="fb-tab" id="feedbackTabAccordion">
             <div class="fb-acc is-open">
               <button type="button" class="fb-acc-toggle" aria-expanded="true" aria-controls="fbAccBody0">
@@ -19275,131 +19294,11 @@
     })();
   </script>
   <script>
-    /* Feedback board — sticky (CSS) while the section scrolls, scrub 1→2→3 (and reverse on scroll up) */
-    (function () {
-      if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") return;
-      gsap.registerPlugin(ScrollTrigger);
-
-      const pin = document.getElementById("feedbackBoardPin");
-      const stage = document.getElementById("feedbackBoardStage");
-      if (!pin || !stage) return;
-
-      const slides = gsap.utils.toArray("#feedbackBoardStage .feedback-board");
-      if (slides.length < 3) return;
-      const [s0, s1, s2] = slides;
-
-      const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-      /* ≤1100px: tablet shows the accordion and phones the carousel, so no scrub */
-      const mqMobile = matchMedia("(max-width: 1100px)");
-      let tl;
-
-      function setActive(i) {
-        slides.forEach((el, n) => {
-          const on = n === i;
-          el.classList.toggle("is-on", on);
-          el.setAttribute("aria-hidden", on ? "false" : "true");
-        });
-      }
-
-      function morphOut() {
-        return {
-          autoAlpha: 0,
-          y: -40,
-          scale: 0.97,
-          filter: "blur(8px)",
-          duration: 0.45
-        };
-      }
-
-      function morphIn() {
-        return {
-          autoAlpha: 1,
-          y: 0,
-          scale: 1,
-          filter: "blur(0px)",
-          duration: 0.5
-        };
-      }
-
-      function frameFromProgress(p) {
-        /* Match timeline holds: f1 mid-band, f2 (last) upper band; reverse uses same map */
-        if (p >= 0.62) return 2;
-        if (p >= 0.28) return 1;
-        return 0;
-      }
-
-      function build() {
-        if (tl) {
-          if (tl.scrollTrigger) tl.scrollTrigger.kill();
-          tl.kill();
-          tl = null;
-        }
-        gsap.killTweensOf(slides);
-        gsap.set(slides, { clearProps: "opacity,visibility,transform,filter" });
-        setActive(0);
-
-        if (mqMobile.matches) {
-          slides.forEach((el) => {
-            el.classList.add("is-on");
-            el.removeAttribute("aria-hidden");
-          });
-          return;
-        }
-
-        gsap.set(s0, { autoAlpha: 1, y: 0, scale: 1, filter: "blur(0px)" });
-        gsap.set([s1, s2], { autoAlpha: 0, y: 52, scale: 0.97, filter: "blur(8px)" });
-
-        /*
-          Down: Frame 1 (Content Authenticity) → Frame 2 (Source Transparency) → Frame 3 last (AI Trust)
-          Up:   Frame 3 → Frame 2 → Frame 1 (scrub reverses the same timeline)
-        */
-        /* No GSAP pin: the board is position: sticky and .feedback-narrative::after
-           adds the 260vh of scroll room. Measure from the narrative (not the sticky
-           board, whose box moves while stuck) to where the board starts. */
-        const narrative = pin.parentElement;
-        const head = narrative.querySelector(".feedback-narrative-head");
-        tl = gsap.timeline({
-          defaults: { ease: "none" },
-          scrollTrigger: {
-            trigger: narrative,
-            start: () => {
-              const gap = parseFloat(getComputedStyle(narrative).rowGap) || 0;
-              return `top+=${(head ? head.offsetHeight + gap : 0)} top`;
-            },
-            end: "+=260%",
-            scrub: reduce ? false : 0.65,
-            invalidateOnRefresh: true,
-            onUpdate(self) {
-              setActive(frameFromProgress(self.progress));
-            }
-          }
-        });
-
-        tl
-          .addLabel("frame1")
-          .to({}, { duration: 0.22 })
-          .to(s0, morphOut())
-          .to(s1, morphIn(), "<0.08")
-          .addLabel("frame2")
-          .to({}, { duration: 0.36 })
-          .to(s1, morphOut())
-          .to(s2, morphIn(), "<0.08")
-          .addLabel("frame3")
-          .to({}, { duration: 0.5 });
-      }
-
-      build();
-      mqMobile.addEventListener("change", build);
-
-      const refresh = () => ScrollTrigger.refresh();
-      addEventListener("load", refresh);
-      if (document.fonts && document.fonts.ready) document.fonts.ready.then(refresh);
-      let rt;
-      addEventListener("resize", () => {
-        clearTimeout(rt);
-        rt = setTimeout(refresh, 180);
-      });
-    })();
+    /* Feedback boards — the phone carousel shows all three; 721px and up uses the accordion */
+    document.querySelectorAll("#feedbackBoardStage .feedback-board").forEach((el) => {
+      el.classList.add("is-on");
+      el.removeAttribute("aria-hidden");
+    });
   </script>
   <script>
     (function () {
